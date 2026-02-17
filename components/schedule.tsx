@@ -4,68 +4,67 @@ import { useState } from "react"
 
 const days = [
   {
-    label: "fri 3/14",
+    label: "Wed 6/17",
     events: [
-      { time: "4:00 PM", title: "check-in opens", tag: "logistics" },
-      { time: "5:00 PM", title: "opening ceremony", tag: "main" },
-      { time: "6:00 PM", title: "dinner + team formation", tag: "food" },
-      { time: "7:00 PM", title: "hacking begins", tag: "hacking" },
-      { time: "8:30 PM", title: "workshop: intro to AI/ML", tag: "workshop" },
-      { time: "10:00 PM", title: "workshop: building with APIs", tag: "workshop" },
-      { time: "12:00 AM", title: "midnight snacks", tag: "food" },
+      { time: "4:00 PM", title: "Check-in opens", tag: "logistics" },
+      { time: "5:00 PM", title: "Opening ceremony", tag: "main" },
+      { time: "6:00 PM", title: "Dinner + team formation", tag: "food" },
+      { time: "7:00 PM", title: "Hacking begins", tag: "hacking" },
+      { time: "8:30 PM", title: "Workshop: Intro to AI/ML", tag: "workshop" },
+      { time: "10:00 PM", title: "Workshop: Building with APIs", tag: "workshop" },
+      { time: "12:00 AM", title: "Midnight snacks", tag: "food" },
     ],
   },
   {
-    label: "sat 3/15",
+    label: "Thu 6/18",
     events: [
-      { time: "8:00 AM", title: "breakfast", tag: "food" },
-      { time: "10:00 AM", title: "workshop: design thinking", tag: "workshop" },
-      { time: "12:00 PM", title: "lunch", tag: "food" },
-      { time: "1:00 PM", title: "mentor office hours", tag: "main" },
-      { time: "3:00 PM", title: "workshop: pitching 101", tag: "workshop" },
-      { time: "5:00 PM", title: "nature break -- group walk", tag: "activity" },
-      { time: "6:30 PM", title: "dinner", tag: "food" },
-      { time: "9:00 PM", title: "mini games + chill", tag: "activity" },
-      { time: "12:00 AM", title: "late night snacks", tag: "food" },
+      { time: "8:00 AM", title: "Breakfast", tag: "food" },
+      { time: "10:00 AM", title: "Workshop: Design thinking", tag: "workshop" },
+      { time: "12:00 PM", title: "Lunch", tag: "food" },
+      { time: "1:00 PM", title: "Mentor office hours", tag: "main" },
+      { time: "3:00 PM", title: "Workshop: Pitching 101", tag: "workshop" },
+      { time: "6:30 PM", title: "Dinner", tag: "food" },
+      { time: "9:00 PM", title: "Mini games + chill", tag: "activity" },
+      { time: "12:00 AM", title: "Late night snacks", tag: "food" },
     ],
   },
   {
-    label: "sun 3/16",
+    label: "Fri 6/19",
     events: [
-      { time: "8:00 AM", title: "breakfast", tag: "food" },
-      { time: "11:00 AM", title: "hacking ends -- submit projects", tag: "hacking" },
-      { time: "12:00 PM", title: "lunch", tag: "food" },
-      { time: "1:00 PM", title: "project expo + judging", tag: "main" },
-      { time: "3:00 PM", title: "closing ceremony + awards", tag: "main" },
-      { time: "4:00 PM", title: "goodbye + group photo", tag: "logistics" },
+      { time: "8:00 AM", title: "Breakfast", tag: "food" },
+      { time: "11:00 AM", title: "Hacking ends - submit projects", tag: "hacking" },
+      { time: "12:00 PM", title: "Lunch", tag: "food" },
+      { time: "1:00 PM", title: "Project expo + judging", tag: "main" },
+      { time: "3:00 PM", title: "Closing ceremony + awards", tag: "main" },
+      { time: "4:00 PM", title: "Group photo + goodbye", tag: "logistics" },
     ],
   },
 ]
 
 const tagColors: Record<string, string> = {
-  main: "bg-[#7BA4D9]/20 text-[#5E8FCC]",
-  food: "bg-[#E8C55A]/20 text-[#9a7d1c]",
-  workshop: "bg-[#2c2c2c]/10 text-[#555]",
-  hacking: "bg-[#E8A88A]/20 text-[#8a5a3e]",
-  activity: "bg-[#4A7C59]/15 text-[#3D6B4F]",
-  logistics: "bg-[#d4c9b5]/30 text-[#888]",
+  main: "bg-[#4a7c59]/15 text-[#4a7c59]",
+  food: "bg-[#e8c06a]/20 text-[#8a6e1e]",
+  workshop: "bg-[#1a1a1a]/8 text-[#666]",
+  hacking: "bg-[#d4836a]/15 text-[#9a5a42]",
+  activity: "bg-[#7ba4d9]/15 text-[#5580b0]",
+  logistics: "bg-[#ccc]/20 text-[#888]",
 }
 
 export function Schedule() {
   const [activeDay, setActiveDay] = useState(0)
 
   return (
-    <section id="schedule" className="relative py-24 md:py-32 bg-[#2c2c2c]">
-      <div className="relative z-10 mx-auto max-w-4xl px-6">
+    <section id="schedule" className="relative py-24 md:py-32 bg-[#1a1a1a]">
+      <div className="mx-auto max-w-4xl px-6">
         <div className="mb-10">
-          <p className="font-mono text-xs tracking-[0.3em] text-[#7BA4D9] mb-3">
-            schedule
+          <p className="font-mono text-xs tracking-widest uppercase text-[#4a7c59] mb-3">
+            Schedule
           </p>
-          <h2 className="font-sans text-4xl md:text-5xl font-black tracking-tight text-white leading-[1.05] mb-3 text-balance">
-            the plan (roughly)
+          <h2 className="font-sans text-3xl md:text-5xl font-black tracking-tight text-white leading-[1.1] mb-3 text-balance">
+            {"The plan (roughly)."}
           </h2>
           <p className="font-sans text-base text-white/40 max-w-md">
-            three days of building, eating, learning, and maybe sleeping a little.
+            Three days of building, eating, learning, and maybe sleeping a little.
           </p>
         </div>
 
@@ -77,8 +76,8 @@ export function Schedule() {
               onClick={() => setActiveDay(i)}
               className={`font-mono text-xs tracking-wider px-5 py-2.5 rounded-full whitespace-nowrap transition-all ${
                 activeDay === i
-                  ? "bg-[#7BA4D9] text-white"
-                  : "bg-white/8 text-white/40 hover:text-white/70 hover:bg-white/12"
+                  ? "bg-[#4a7c59] text-white"
+                  : "bg-white/8 text-white/40 hover:text-white/60 hover:bg-white/12"
               }`}
             >
               {day.label}
@@ -96,7 +95,7 @@ export function Schedule() {
               <span className="font-mono text-xs text-white/25 w-20 shrink-0">
                 {event.time}
               </span>
-              <div className="w-1.5 h-1.5 rounded-full bg-white/15 group-hover:bg-[#7BA4D9] transition-colors shrink-0" />
+              <div className="w-1.5 h-1.5 rounded-full bg-white/15 group-hover:bg-[#4a7c59] transition-colors shrink-0" />
               <span className="font-sans text-sm md:text-base text-white/70 group-hover:text-white transition-colors flex-1">
                 {event.title}
               </span>

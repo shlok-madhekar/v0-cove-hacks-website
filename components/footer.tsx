@@ -2,40 +2,38 @@ import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#2c2c2c] py-14 border-t border-white/5">
-      <div className="mx-auto max-w-6xl px-6">
+    <footer className="bg-[#1a1a1a] border-t border-white/5 py-12">
+      <div className="mx-auto max-w-5xl px-6">
         <div className="flex flex-col md:flex-row items-start justify-between gap-10">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-3">
               <Image
                 src="/images/logo.png"
-                alt="Cove Hacks logo"
-                width={28}
-                height={28}
-                className="rounded-full"
+                alt="Cove Hacks"
+                width={24}
+                height={24}
+                className="rounded-md"
               />
-              <span className="font-mono text-sm font-bold tracking-wider text-white">
-                cove hacks
+              <span className="font-sans text-sm font-bold text-white tracking-tight">
+                Cove Hacks
               </span>
             </div>
-            <p className="font-sans text-sm text-white/35 max-w-xs leading-relaxed">
-              a 48-hour hackathon in the bay area. 400 hackers. one weekend. let&apos;s build.
+            <p className="font-sans text-sm text-white/30 max-w-xs leading-relaxed">
+              A 48-hour hackathon for 400 builders in the Bay Area. June 17-19, 2026.
             </p>
           </div>
 
-          {/* Links */}
           <div className="flex gap-12">
             <div>
-              <p className="font-mono text-[10px] tracking-widest text-white/25 mb-3">
-                navigate
+              <p className="font-mono text-[10px] tracking-widest uppercase text-white/20 mb-3">
+                Navigate
               </p>
               <div className="flex flex-col gap-1.5">
-                {["about", "schedule", "tracks", "faq"].map((link) => (
+                {["About", "Schedule", "Tracks", "Sponsors", "FAQ"].map((link) => (
                   <a
                     key={link}
-                    href={`#${link}`}
-                    className="font-sans text-sm text-white/45 hover:text-white transition-colors"
+                    href={`#${link.toLowerCase()}`}
+                    className="font-sans text-sm text-white/40 hover:text-white/70 transition-colors"
                   >
                     {link}
                   </a>
@@ -43,21 +41,21 @@ export function Footer() {
               </div>
             </div>
             <div>
-              <p className="font-mono text-[10px] tracking-widest text-white/25 mb-3">
-                connect
+              <p className="font-mono text-[10px] tracking-widest uppercase text-white/20 mb-3">
+                Connect
               </p>
               <div className="flex flex-col gap-1.5">
-                <a href="mailto:hello@covehacks.org" className="font-sans text-sm text-white/45 hover:text-white transition-colors">
-                  email
+                <a href="mailto:hello@covehacks.org" className="font-sans text-sm text-white/40 hover:text-white/70 transition-colors">
+                  Email
                 </a>
-                <a href="#" className="font-sans text-sm text-white/45 hover:text-white transition-colors">
-                  twitter
+                <a href="#" className="font-sans text-sm text-white/40 hover:text-white/70 transition-colors">
+                  Twitter
                 </a>
-                <a href="#" className="font-sans text-sm text-white/45 hover:text-white transition-colors">
-                  instagram
+                <a href="#" className="font-sans text-sm text-white/40 hover:text-white/70 transition-colors">
+                  Instagram
                 </a>
-                <a href="#" className="font-sans text-sm text-white/45 hover:text-white transition-colors">
-                  discord
+                <a href="#" className="font-sans text-sm text-white/40 hover:text-white/70 transition-colors">
+                  Discord
                 </a>
               </div>
             </div>
@@ -65,11 +63,11 @@ export function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="font-mono text-[10px] tracking-wider text-white/20">
-            made with caffeine in the bay
+          <p className="font-mono text-[10px] tracking-wider text-white/15">
+            Made with caffeine in the Bay
           </p>
-          <p className="font-mono text-[10px] tracking-wider text-white/20">
-            &copy; 2026 cove hacks
+          <p className="font-mono text-[10px] tracking-wider text-white/15">
+            2026 Cove Hacks
           </p>
         </div>
       </div>
