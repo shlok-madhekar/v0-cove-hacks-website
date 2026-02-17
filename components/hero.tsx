@@ -3,17 +3,19 @@
 import { useEffect, useState } from "react"
 
 function useCountdown(target: Date) {
-  const [now, setNow] = useState(new Date())
+  const [diff, setDiff] = useState(0)
   useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 1000)
+    const tick = () => setDiff(Math.max(0, target.getTime() - Date.now()))
+    tick()
+    const id = setInterval(tick, 1000)
     return () => clearInterval(id)
-  }, [])
-  const diff = Math.max(0, target.getTime() - now.getTime())
-  const days = Math.floor(diff / 86400000)
-  const hours = Math.floor((diff % 86400000) / 3600000)
-  const mins = Math.floor((diff % 3600000) / 60000)
-  const secs = Math.floor((diff % 60000) / 1000)
-  return { days, hours, mins, secs }
+  }, [target])
+  return {
+    days: Math.floor(diff / 86400000),
+    hours: Math.floor((diff % 86400000) / 3600000),
+    mins: Math.floor((diff % 3600000) / 60000),
+    secs: Math.floor((diff % 60000) / 1000),
+  }
 }
 
 export function Hero() {
