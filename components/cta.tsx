@@ -1,36 +1,41 @@
+import Image from "next/image"
+
 export function CTA() {
   return (
-    <section id="register" className="relative py-24 md:py-36 bg-[#E8C55A]">
-      <div className="relative z-10 text-center px-6 max-w-2xl mx-auto">
-        <h2 className="font-sans text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-[#1a1a1a] leading-[0.95] mb-5 text-balance">
-          Come build
-          <br />
-          something.
-        </h2>
+    <section id="register" className="relative py-28 md:py-40 bg-[#1a1a1a] overflow-hidden">
+      {/* Sun logo as subtle background glow */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.08]">
+        <Image
+          src="/images/cove-logo-nobg.png"
+          alt=""
+          width={800}
+          height={800}
+          className="w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
+        />
+      </div>
 
-        <p className="font-sans text-base md:text-lg text-[#1a1a1a]/55 mb-10 max-w-sm mx-auto">
-          Apps close June 1. 400 spots. Bring a laptop, curiosity, and maybe a
-          soldering iron.
+      <div className="relative z-10 text-center px-6 max-w-lg mx-auto">
+        <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-[0.95] mb-4 text-balance">
+          Applications are open.
+        </h2>
+        <p className="font-sans text-sm sm:text-base text-white/35 mb-8 max-w-sm mx-auto">
+          June 17&ndash;19 &middot; Bay Area &middot; Free
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
             href="#"
-            className="font-sans text-sm font-bold bg-[#1a1a1a] text-white px-10 py-3.5 rounded-full hover:bg-[#333] transition-colors"
+            className="font-sans text-sm font-semibold bg-white text-[#1a1a1a] px-8 py-3 rounded-full hover:bg-white/90 transition-colors w-full sm:w-auto text-center"
           >
             Apply now
           </a>
           <a
-            href="mailto:sponsors@covehacks.org"
-            className="font-sans text-sm font-medium text-[#1a1a1a]/60 border border-[#1a1a1a]/20 px-10 py-3.5 rounded-full hover:border-[#1a1a1a]/40 hover:text-[#1a1a1a] transition-all"
+            href="mailto:hello@covehacks.org"
+            className="font-sans text-sm text-white/40 border border-white/10 px-8 py-3 rounded-full hover:border-white/25 hover:text-white/60 transition-all w-full sm:w-auto text-center"
           >
-            Sponsor us
+            Get in touch
           </a>
         </div>
-
-        <p className="font-mono text-xs text-[#1a1a1a]/30 mt-10">
-          hello@covehacks.org
-        </p>
       </div>
     </section>
   )
