@@ -1,97 +1,81 @@
 import Image from "next/image"
 
+function Cloud({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 100" className={className} fill="white" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="70" cy="60" rx="50" ry="30" />
+      <ellipse cx="110" cy="55" rx="45" ry="35" />
+      <ellipse cx="140" cy="62" rx="38" ry="25" />
+      <ellipse cx="90" cy="45" rx="35" ry="28" />
+    </svg>
+  )
+}
+
 export function CTA() {
   return (
-    <section id="register" className="relative py-24 md:py-40 bg-[#7BA4D9] overflow-hidden">
-      {/* Paper texture overlay */}
+    <section id="register" className="relative py-24 md:py-36 bg-[#7BA4D9] overflow-hidden">
+      {/* Paper grain */}
       <div
-        className="absolute inset-0 opacity-[0.08] mix-blend-multiply"
+        className="absolute inset-0 opacity-[0.12] pointer-events-none"
         style={{
-          backgroundImage: "url(/images/paper-texture.jpg)",
-          backgroundSize: "600px",
-          backgroundRepeat: "repeat",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='4' type='fractalNoise'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")`,
+          backgroundSize: "200px",
         }}
       />
 
-      {/* Sun glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-[radial-gradient(circle,_rgba(232,168,138,0.5)_0%,_rgba(232,197,90,0.3)_35%,_rgba(123,164,217,0)_65%)]" />
+      {/* Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full bg-[#E8C55A]/15 blur-3xl" />
 
       {/* Clouds */}
-      <div className="absolute top-8 left-8 w-48 opacity-40">
-        <Image
-          src="/images/cloud1.jpg"
-          alt=""
-          width={200}
-          height={150}
-          className="w-full h-auto mix-blend-screen"
-        />
-      </div>
-      <div className="absolute bottom-12 right-12 w-56 opacity-30">
-        <Image
-          src="/images/cloud2.jpg"
-          alt=""
-          width={230}
-          height={170}
-          className="w-full h-auto mix-blend-screen"
-        />
-      </div>
+      <Cloud className="absolute top-6 left-6 w-36 opacity-50" />
+      <Cloud className="absolute bottom-8 right-8 w-44 opacity-40" />
+      <Cloud className="absolute top-1/3 right-1/4 w-24 opacity-30" />
 
-      {/* Torn paper top edge */}
+      {/* Wavy top edge from paper section */}
       <div className="absolute top-0 left-0 right-0 rotate-180">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
+        <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block" preserveAspectRatio="none">
           <path
-            d="M0 60V30C60 25 120 38 180 32C240 26 300 14 360 20C420 26 480 42 540 38C600 34 660 22 720 28C780 34 840 45 900 40C960 35 1020 20 1080 25C1140 30 1200 42 1260 38C1320 34 1380 22 1440 28V60H0Z"
+            d="M0 50V20Q60 10 120 18T240 22Q300 14 360 20T480 18Q540 24 600 16T720 22Q780 12 840 20T960 18Q1020 24 1080 16T1200 22Q1260 14 1320 20T1440 18V50H0Z"
             fill="#f5f0e8"
           />
         </svg>
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-2xl mx-auto">
         <Image
           src="/images/logo.png"
           alt="Cove Hacks sun logo"
-          width={100}
-          height={100}
-          className="w-20 h-20 mx-auto rounded-full shadow-xl mb-8"
+          width={80}
+          height={80}
+          className="w-16 h-16 mx-auto rounded-full drop-shadow-lg mb-6"
         />
 
-        <h2 className="font-sans text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[0.95] mb-6 text-balance drop-shadow-sm">
-          Your spot in the cove is waiting
+        <h2 className="font-sans text-4xl md:text-6xl font-black tracking-tight text-white leading-[0.95] mb-4 text-balance drop-shadow-sm">
+          come build with us
         </h2>
 
-        <p className="font-sans text-lg text-white/70 mb-10 max-w-lg mx-auto">
-          Applications are open. Space is limited to 400 hackers. Don&apos;t miss your chance to build something incredible.
+        <p className="font-sans text-base md:text-lg text-white/80 mb-8 max-w-md mx-auto">
+          apps close march 1st. 400 spots. bring your laptop and your weird ideas.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
             href="#"
-            className="font-mono text-sm tracking-widest uppercase bg-white text-[#2c2c2c] px-10 py-4 rounded-full hover:bg-[#f5f0e8] transition-all hover:scale-105 shadow-lg font-bold inline-block"
+            className="font-mono text-sm tracking-wider bg-white text-[#2c2c2c] px-10 py-3.5 rounded-full hover:bg-[#f0ebe3] transition-all hover:scale-105 shadow-lg font-bold inline-block"
           >
-            Apply Now
+            apply now
           </a>
           <a
             href="#"
-            className="font-mono text-sm tracking-widest uppercase text-white border-2 border-white/40 px-10 py-4 rounded-full hover:bg-white/10 transition-all inline-block"
+            className="font-mono text-sm tracking-wider text-white border-2 border-white/40 px-10 py-3.5 rounded-full hover:bg-white/10 transition-all inline-block"
           >
-            Sponsor Us
+            sponsor us
           </a>
         </div>
 
-        <p className="font-mono text-xs tracking-widest uppercase text-white/40 mt-8">
-          Applications close March 1, 2026
+        <p className="font-mono text-xs text-white/40 mt-6">
+          questions? hit us up at hello@covehacks.org
         </p>
-      </div>
-
-      {/* Bottom trees */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48">
-        <Image
-          src="/images/trees.jpg"
-          alt=""
-          fill
-          className="object-cover object-top mix-blend-multiply opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2c2c2c] via-transparent to-transparent" />
       </div>
     </section>
   )

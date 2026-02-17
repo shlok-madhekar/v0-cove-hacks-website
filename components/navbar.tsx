@@ -17,16 +17,16 @@ export function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#f5f0e8]/80 border-b border-[#d4c9b5]/50">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-3">
-        <a href="#" className="flex items-center gap-3">
+        <a href="#" className="flex items-center gap-2.5">
           <Image
             src="/images/logo.png"
             alt="Cove Hacks sun logo"
-            width={40}
-            height={40}
+            width={32}
+            height={32}
             className="rounded-full"
           />
-          <span className="font-mono text-sm font-bold tracking-widest uppercase text-[#2c2c2c]">
-            Cove Hacks
+          <span className="font-mono text-sm font-bold tracking-wider text-[#2c2c2c]">
+            cove hacks
           </span>
         </a>
 
@@ -35,16 +35,16 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="font-mono text-xs tracking-widest uppercase text-[#555] hover:text-[#2c2c2c] transition-colors"
+              className="font-mono text-xs tracking-wider text-[#555] hover:text-[#2c2c2c] transition-colors"
             >
-              {link.label}
+              {link.label.toLowerCase()}
             </a>
           ))}
           <a
             href="#register"
-            className="font-mono text-xs tracking-widest uppercase bg-[#2c2c2c] text-[#f5f0e8] px-5 py-2.5 rounded-full hover:bg-[#444] transition-colors"
+            className="font-mono text-xs tracking-wider bg-[#2c2c2c] text-[#f5f0e8] px-5 py-2.5 rounded-full hover:bg-[#444] transition-colors"
           >
-            Register
+            register
           </a>
         </div>
 
@@ -53,7 +53,7 @@ export function Navbar() {
           className="md:hidden text-[#2c2c2c]"
           aria-label={open ? "Close menu" : "Open menu"}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
@@ -64,17 +64,17 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="font-mono text-sm tracking-widest uppercase text-[#555] hover:text-[#2c2c2c] transition-colors"
+              className="font-mono text-sm tracking-wider text-[#555] hover:text-[#2c2c2c] transition-colors"
             >
-              {link.label}
+              {link.label.toLowerCase()}
             </a>
           ))}
           <a
             href="#register"
             onClick={() => setOpen(false)}
-            className="font-mono text-sm tracking-widest uppercase bg-[#2c2c2c] text-[#f5f0e8] px-5 py-3 rounded-full text-center hover:bg-[#444] transition-colors"
+            className="font-mono text-sm tracking-wider bg-[#2c2c2c] text-[#f5f0e8] px-5 py-3 rounded-full text-center hover:bg-[#444] transition-colors"
           >
-            Register
+            register
           </a>
         </div>
       )}
