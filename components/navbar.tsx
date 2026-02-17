@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 
-const navLinks = [
+const links = [
   { label: "About", href: "#about" },
   { label: "Schedule", href: "#schedule" },
   { label: "Tracks", href: "#tracks" },
@@ -14,36 +14,61 @@ const navLinks = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#f5f0e8]/90 border-b border-[#e5e0d5]">
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-3">
-        <a href="#" className="flex items-center gap-2.5">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-3.5">
+        <a href="#" className="flex items-center gap-2">
           <Image
-            src="/images/logo.png"
+            src="/images/cove-logo.png"
             alt="Cove Hacks"
             width={28}
             height={28}
-            className="rounded-lg"
+            className="rounded-md"
           />
-          <span className="font-sans text-sm font-bold tracking-tight text-[#1a1a1a]">
+          <span
+            className={`font-sans text-sm font-bold tracking-tight transition-colors ${
+              scrolled ? "text-[#1a1a1a]" : "text-white"
+            }`}
+          >
             Cove Hacks
           </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-7">
-          {navLinks.map((link) => (
+        <div className="hidden md:flex items-center gap-6">
+          {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-sans text-sm text-[#666] hover:text-[#1a1a1a] transition-colors"
+              className={`font-sans text-sm transition-colors ${
+                scrolled
+                  ? "text-[#1a1a1a]/55 hover:text-[#1a1a1a]"
+                  : "text-white/65 hover:text-white"
+              }`}
             >
               {link.label}
             </a>
           ))}
           <a
             href="#register"
-            className="font-mono text-xs tracking-wide bg-[#1a1a1a] text-[#f5f0e8] px-5 py-2 rounded-full hover:bg-[#333] transition-colors font-bold"
+            className={`font-sans text-sm font-bold px-5 py-2 rounded-full transition-colors ${
+              scrolled
+                ? "bg-[#1a1a1a] text-white hover:bg-[#333]"
+                : "bg-white text-[#7BA4D9] hover:bg-white/90"
+            }`}
           >
             Apply
           </a>
@@ -51,7 +76,9 @@ export function Navbar() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-[#1a1a1a]"
+          className={`md:hidden transition-colors ${
+            scrolled ? "text-[#1a1a1a]" : "text-white"
+          }`}
           aria-label={open ? "Close menu" : "Open menu"}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -59,13 +86,13 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-[#f5f0e8]/98 backdrop-blur-md border-t border-[#e5e0d5] px-6 pb-6 pt-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-[#1a1a1a]/5 px-6 pb-5 pt-3 flex flex-col gap-3">
+          {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="font-sans text-sm text-[#666] hover:text-[#1a1a1a] transition-colors"
+              className="font-sans text-sm text-[#1a1a1a]/60 hover:text-[#1a1a1a] transition-colors py-1"
             >
               {link.label}
             </a>
@@ -73,9 +100,9 @@ export function Navbar() {
           <a
             href="#register"
             onClick={() => setOpen(false)}
-            className="font-mono text-sm tracking-wide bg-[#1a1a1a] text-[#f5f0e8] px-5 py-3 rounded-full text-center hover:bg-[#333] transition-colors font-bold"
+            className="font-sans text-sm font-bold bg-[#1a1a1a] text-white px-5 py-3 rounded-full text-center hover:bg-[#333] transition-colors mt-1"
           >
-            Apply
+            Apply now
           </a>
         </div>
       )}

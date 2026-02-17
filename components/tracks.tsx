@@ -1,75 +1,64 @@
-import { Globe, Brain, Heart, Leaf, Sparkles } from "lucide-react"
-
 const tracks = [
   {
-    icon: Leaf,
-    name: "Sustainability",
-    description: "Climate tech, green energy, conservation - anything that helps the planet.",
-    color: "#4a7c59",
+    name: "Hardware",
+    desc: "Robots, wearables, IoT, anything physical. We have the lab for it.",
+    bg: "bg-[#E8A88A]",
+    text: "text-[#1a1a1a]",
+    muted: "text-[#1a1a1a]/50",
   },
   {
-    icon: Brain,
-    name: "AI for Good",
-    description: "Use AI to actually help people. Accessibility, education, health.",
-    color: "#5580b0",
+    name: "AI / ML",
+    desc: "LLMs, computer vision, generative stuff, or something nobody's thought of yet.",
+    bg: "bg-[#7BA4D9]",
+    text: "text-white",
+    muted: "text-white/60",
   },
   {
-    icon: Heart,
-    name: "Community",
-    description: "Social platforms, civic tech, local tools - stuff that brings people closer.",
-    color: "#d4836a",
+    name: "Social Good",
+    desc: "Education, accessibility, climate, health -- tech that helps real people.",
+    bg: "bg-[#1a1a1a]",
+    text: "text-white",
+    muted: "text-white/45",
   },
   {
-    icon: Globe,
     name: "Open Source",
-    description: "Build something anyone can use, fork, and improve.",
-    color: "#e8c06a",
+    desc: "Build something the world can use, fork, and improve on.",
+    bg: "bg-[#E8C55A]",
+    text: "text-[#1a1a1a]",
+    muted: "text-[#1a1a1a]/50",
   },
   {
-    icon: Sparkles,
     name: "Wild Card",
-    description: "Doesn't fit anywhere else? Perfect. Surprise us.",
-    color: "#1a1a1a",
+    desc: "Doesn't fit a category? Good. Surprise us.",
+    bg: "bg-[#F0EDE6]",
+    text: "text-[#1a1a1a]",
+    muted: "text-[#1a1a1a]/40",
   },
 ]
 
 export function Tracks() {
   return (
-    <section id="tracks" className="relative py-24 md:py-32 bg-[#f5f0e8]">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="mb-14 max-w-2xl">
-          <p className="font-mono text-xs tracking-widest uppercase text-[#4a7c59] mb-3">
-            Tracks
-          </p>
-          <h2 className="font-sans text-3xl md:text-5xl font-black tracking-tight text-[#1a1a1a] leading-[1.1] mb-4 text-balance">
-            Pick a lane (or don't).
-          </h2>
-          <p className="font-sans text-base text-[#666] leading-relaxed">
-            Each track has dedicated mentors, sponsors, and prizes. Or just go wild card.
-          </p>
-        </div>
+    <section id="tracks" className="relative py-20 md:py-28 bg-[#FAFAF7]">
+      <div className="mx-auto max-w-6xl px-6">
+        <h2 className="font-sans text-3xl md:text-5xl font-black tracking-tight text-[#1a1a1a] leading-[1.05] mb-4">
+          Tracks
+        </h2>
+        <p className="font-sans text-base text-[#1a1a1a]/50 mb-10 max-w-lg">
+          Pick one or don&apos;t. Each track has its own mentors and prizes,
+          but you can build whatever you want.
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {tracks.map((track) => (
+          {tracks.map((t) => (
             <div
-              key={track.name}
-              className="group rounded-2xl p-6 border border-[#e5e0d5] bg-white hover:shadow-md hover:-translate-y-0.5 transition-all"
+              key={t.name}
+              className={`${t.bg} rounded-2xl p-6 min-h-[180px] flex flex-col justify-between hover:scale-[1.02] transition-transform`}
             >
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center mb-5"
-                style={{ backgroundColor: `${track.color}18` }}
-              >
-                <track.icon
-                  className="w-4 h-4"
-                  style={{ color: track.color }}
-                  strokeWidth={1.5}
-                />
-              </div>
-              <h3 className="font-sans text-lg font-bold text-[#1a1a1a] tracking-tight mb-2">
-                {track.name}
+              <h3 className={`font-sans text-xl font-black tracking-tight ${t.text}`}>
+                {t.name}
               </h3>
-              <p className="font-sans text-sm text-[#666] leading-relaxed">
-                {track.description}
+              <p className={`font-sans text-sm leading-relaxed mt-4 ${t.muted}`}>
+                {t.desc}
               </p>
             </div>
           ))}

@@ -16,11 +16,11 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   title: 'Cove Hacks | 48-Hour Bay Area Hackathon',
-  description: 'Join 400 builders for a 48-hour hackathon in the Bay Area. June 17-19, 2026. Free food, workshops, prizes, and good vibes.',
-  keywords: ['hackathon', 'Bay Area', 'coding', 'Cove Hacks', 'technology', 'builders'],
+  description: 'The largest high school hackathon ever. 400 hackers, 48 hours, hardware labs, and a whole lot of building. Bay Area, June 17-19, 2026.',
+  keywords: ['hackathon', 'Bay Area', 'high school', 'Cove Hacks', 'hardware', 'coding'],
   openGraph: {
     title: 'Cove Hacks | 48-Hour Bay Area Hackathon',
-    description: 'Join 400 builders for a 48-hour hackathon in the Bay Area. June 17-19, 2026.',
+    description: 'The largest high school hackathon ever. 400 hackers, 48 hours, Bay Area. June 17-19, 2026.',
     type: 'website',
   },
 }

@@ -1,71 +1,62 @@
 export function Sponsors() {
-  const tierOne = ["Acme Corp", "TechCo", "BuildLabs"]
-  const tierTwo = ["StartupFund", "DevTools Inc", "CloudBase", "Pixel Studio"]
-  const tierThree = ["CafeCode", "DataDen", "Nook", "SignalHQ", "Forma", "Helios"]
-
   return (
-    <section id="sponsors" className="relative py-24 md:py-32 bg-[#f5f0e8]">
+    <section id="sponsors" className="relative py-20 md:py-28 bg-[#FAFAF7]">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="mb-14 text-center">
-          <p className="font-mono text-xs tracking-widest uppercase text-[#4a7c59] mb-3">
-            Sponsors
-          </p>
-          <h2 className="font-sans text-3xl md:text-5xl font-black tracking-tight text-[#1a1a1a] leading-[1.1] mb-4 text-balance">
-            Backed by people who care.
-          </h2>
-          <p className="font-sans text-base text-[#666] max-w-md mx-auto">
-            {"Interested in sponsoring? "}
-            <a href="mailto:sponsors@covehacks.org" className="underline underline-offset-4 hover:text-[#1a1a1a] transition-colors">
-              {"Let's talk."}
-            </a>
-          </p>
-        </div>
-
-        {/* Tier 1 - big */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
-          {tierOne.map((name) => (
-            <div
-              key={name}
-              className="bg-white border border-[#e5e0d5] rounded-2xl px-10 py-7 flex items-center justify-center min-w-[180px]"
-            >
-              <span className="font-sans text-lg font-bold text-[#1a1a1a]/70 tracking-tight">
-                {name}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Tier 2 - medium */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
-          {tierTwo.map((name) => (
-            <div
-              key={name}
-              className="bg-white border border-[#e5e0d5] rounded-xl px-7 py-5 flex items-center justify-center"
-            >
-              <span className="font-sans text-sm font-semibold text-[#1a1a1a]/55 tracking-tight">
-                {name}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Tier 3 - small */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5">
-          {tierThree.map((name) => (
-            <div
-              key={name}
-              className="bg-white border border-[#e5e0d5] rounded-lg px-5 py-3 flex items-center justify-center"
-            >
-              <span className="font-sans text-xs font-medium text-[#1a1a1a]/40 tracking-tight">
-                {name}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <p className="font-mono text-[10px] text-center text-[#aaa] mt-8 tracking-wider">
-          Placeholder names shown. Real sponsors coming soon.
+        <h2 className="font-sans text-3xl md:text-5xl font-black tracking-tight text-[#1a1a1a] leading-[1.05] mb-3">
+          Sponsors
+        </h2>
+        <p className="font-sans text-base text-[#1a1a1a]/45 mb-12 max-w-md">
+          Want to help make this happen?{" "}
+          <a
+            href="mailto:sponsors@covehacks.org"
+            className="underline underline-offset-4 decoration-[#1a1a1a]/20 hover:decoration-[#1a1a1a]/50 text-[#1a1a1a]/65 transition-colors"
+          >
+            Reach out
+          </a>
+          .
         </p>
+
+        {/* Tier 1 */}
+        <div className="flex flex-wrap items-center justify-center gap-5 mb-8">
+          {["Your Company", "Your Company", "Your Company"].map((name, i) => (
+            <div
+              key={`t1-${i}`}
+              className="border-2 border-dashed border-[#1a1a1a]/10 rounded-2xl w-[200px] h-[90px] flex items-center justify-center"
+            >
+              <span className="font-sans text-sm font-semibold text-[#1a1a1a]/20">
+                {name}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Tier 2 */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
+          {["Your Company", "Your Company", "Your Company", "Your Company"].map((name, i) => (
+            <div
+              key={`t2-${i}`}
+              className="border border-dashed border-[#1a1a1a]/8 rounded-xl w-[150px] h-[65px] flex items-center justify-center"
+            >
+              <span className="font-sans text-xs text-[#1a1a1a]/15">
+                {name}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Tier 3 */}
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div
+              key={`t3-${i}`}
+              className="border border-dashed border-[#1a1a1a]/6 rounded-lg w-[110px] h-[45px] flex items-center justify-center"
+            >
+              <span className="font-sans text-[10px] text-[#1a1a1a]/10">
+                Logo
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

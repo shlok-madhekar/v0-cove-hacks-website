@@ -4,105 +4,90 @@ import { useState } from "react"
 
 const days = [
   {
-    label: "Wed 6/17",
+    label: "Day 1 -- Wed 6/17",
+    short: "Wed",
     events: [
-      { time: "4:00 PM", title: "Check-in opens", tag: "logistics" },
-      { time: "5:00 PM", title: "Opening ceremony", tag: "main" },
-      { time: "6:00 PM", title: "Dinner + team formation", tag: "food" },
-      { time: "7:00 PM", title: "Hacking begins", tag: "hacking" },
-      { time: "8:30 PM", title: "Workshop: Intro to AI/ML", tag: "workshop" },
-      { time: "10:00 PM", title: "Workshop: Building with APIs", tag: "workshop" },
-      { time: "12:00 AM", title: "Midnight snacks", tag: "food" },
+      { time: "4 PM", what: "Doors open + check-in" },
+      { time: "5 PM", what: "Opening ceremony" },
+      { time: "6 PM", what: "Dinner & team formation" },
+      { time: "7 PM", what: "Hacking starts" },
+      { time: "8:30 PM", what: "Workshop: Intro to hardware" },
+      { time: "10 PM", what: "Workshop: APIs & integrations" },
+      { time: "12 AM", what: "Midnight snacks" },
     ],
   },
   {
-    label: "Thu 6/18",
+    label: "Day 2 -- Thu 6/18",
+    short: "Thu",
     events: [
-      { time: "8:00 AM", title: "Breakfast", tag: "food" },
-      { time: "10:00 AM", title: "Workshop: Design thinking", tag: "workshop" },
-      { time: "12:00 PM", title: "Lunch", tag: "food" },
-      { time: "1:00 PM", title: "Mentor office hours", tag: "main" },
-      { time: "3:00 PM", title: "Workshop: Pitching 101", tag: "workshop" },
-      { time: "6:30 PM", title: "Dinner", tag: "food" },
-      { time: "9:00 PM", title: "Mini games + chill", tag: "activity" },
-      { time: "12:00 AM", title: "Late night snacks", tag: "food" },
+      { time: "8 AM", what: "Breakfast" },
+      { time: "10 AM", what: "Workshop: AI/ML crash course" },
+      { time: "12 PM", what: "Lunch" },
+      { time: "1 PM", what: "Mentor office hours" },
+      { time: "3 PM", what: "Workshop: How to pitch" },
+      { time: "6:30 PM", what: "Dinner" },
+      { time: "9 PM", what: "Mini games + vibes" },
+      { time: "12 AM", what: "Late night snacks" },
     ],
   },
   {
-    label: "Fri 6/19",
+    label: "Day 3 -- Fri 6/19",
+    short: "Fri",
     events: [
-      { time: "8:00 AM", title: "Breakfast", tag: "food" },
-      { time: "11:00 AM", title: "Hacking ends - submit projects", tag: "hacking" },
-      { time: "12:00 PM", title: "Lunch", tag: "food" },
-      { time: "1:00 PM", title: "Project expo + judging", tag: "main" },
-      { time: "3:00 PM", title: "Closing ceremony + awards", tag: "main" },
-      { time: "4:00 PM", title: "Group photo + goodbye", tag: "logistics" },
+      { time: "8 AM", what: "Breakfast" },
+      { time: "11 AM", what: "Hacking ends -- submit!" },
+      { time: "12 PM", what: "Lunch" },
+      { time: "1 PM", what: "Expo & judging" },
+      { time: "3 PM", what: "Closing ceremony + awards" },
+      { time: "4 PM", what: "Group photo & goodbye" },
     ],
   },
 ]
 
-const tagColors: Record<string, string> = {
-  main: "bg-[#4a7c59]/15 text-[#4a7c59]",
-  food: "bg-[#e8c06a]/20 text-[#8a6e1e]",
-  workshop: "bg-[#1a1a1a]/8 text-[#666]",
-  hacking: "bg-[#d4836a]/15 text-[#9a5a42]",
-  activity: "bg-[#7ba4d9]/15 text-[#5580b0]",
-  logistics: "bg-[#ccc]/20 text-[#888]",
-}
-
 export function Schedule() {
-  const [activeDay, setActiveDay] = useState(0)
+  const [active, setActive] = useState(0)
 
   return (
-    <section id="schedule" className="relative py-24 md:py-32 bg-[#1a1a1a]">
+    <section id="schedule" className="relative py-20 md:py-28 bg-[#1a1a1a]">
       <div className="mx-auto max-w-4xl px-6">
-        <div className="mb-10">
-          <p className="font-mono text-xs tracking-widest uppercase text-[#4a7c59] mb-3">
-            Schedule
-          </p>
-          <h2 className="font-sans text-3xl md:text-5xl font-black tracking-tight text-white leading-[1.1] mb-3 text-balance">
-            {"The plan (roughly)."}
-          </h2>
-          <p className="font-sans text-base text-white/40 max-w-md">
-            Three days of building, eating, learning, and maybe sleeping a little.
-          </p>
-        </div>
+        <h2 className="font-sans text-3xl md:text-5xl font-black tracking-tight text-white leading-[1.05] mb-3">
+          Schedule
+        </h2>
+        <p className="font-sans text-base text-white/35 mb-10 max-w-md">
+          Subject to change, but this is roughly the plan.
+        </p>
 
         {/* Day tabs */}
-        <div className="flex gap-2 mb-8">
+        <div className="flex gap-2 mb-8 overflow-x-auto">
           {days.map((day, i) => (
             <button
-              key={day.label}
-              onClick={() => setActiveDay(i)}
-              className={`font-mono text-xs tracking-wider px-5 py-2.5 rounded-full whitespace-nowrap transition-all ${
-                activeDay === i
-                  ? "bg-[#4a7c59] text-white"
-                  : "bg-white/8 text-white/40 hover:text-white/60 hover:bg-white/12"
+              key={day.short}
+              onClick={() => setActive(i)}
+              className={`font-sans text-sm font-semibold px-5 py-2.5 rounded-full whitespace-nowrap transition-all ${
+                active === i
+                  ? "bg-[#7BA4D9] text-white"
+                  : "bg-white/8 text-white/35 hover:text-white/55 hover:bg-white/12"
               }`}
             >
-              {day.label}
+              <span className="hidden sm:inline">{day.label}</span>
+              <span className="sm:hidden">{day.short}</span>
             </button>
           ))}
         </div>
 
-        {/* Events */}
-        <div className="space-y-0.5">
-          {days[activeDay].events.map((event) => (
+        {/* Events list */}
+        <div className="space-y-0">
+          {days[active].events.map((e, i) => (
             <div
-              key={`${event.time}-${event.title}`}
-              className="flex items-center gap-4 py-3.5 px-4 rounded-xl hover:bg-white/5 transition-colors group"
+              key={`${e.time}-${i}`}
+              className="flex items-center gap-5 py-3.5 px-3 rounded-lg hover:bg-white/5 transition-colors group"
             >
-              <span className="font-mono text-xs text-white/25 w-20 shrink-0">
-                {event.time}
+              <span className="font-mono text-xs text-white/20 w-16 shrink-0 text-right">
+                {e.time}
               </span>
-              <div className="w-1.5 h-1.5 rounded-full bg-white/15 group-hover:bg-[#4a7c59] transition-colors shrink-0" />
-              <span className="font-sans text-sm md:text-base text-white/70 group-hover:text-white transition-colors flex-1">
-                {event.title}
-              </span>
-              <span
-                className={`font-mono text-[10px] tracking-wider px-2.5 py-1 rounded-full shrink-0 ${tagColors[event.tag]}`}
-              >
-                {event.tag}
+              <div className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-[#E8C55A] transition-colors shrink-0" />
+              <span className="font-sans text-sm text-white/55 group-hover:text-white/90 transition-colors">
+                {e.what}
               </span>
             </div>
           ))}
