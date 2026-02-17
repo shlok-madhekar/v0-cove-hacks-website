@@ -1,26 +1,25 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Space_Mono } from 'next/font/google'
+import { DM_Sans, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-dm-sans",
 })
 
-const spaceMono = Space_Mono({
+const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
+  variable: "--font-jb-mono",
 })
 
 export const metadata: Metadata = {
   title: 'Cove Hacks | 48-Hour Bay Area Hackathon',
-  description: 'The largest high school hackathon ever. 400 hackers, 48 hours, hardware labs, and a whole lot of building. Bay Area, June 17-19, 2026.',
+  description: 'The largest high school hackathon ever. 400 hackers, 48 hours, hardware labs, and a whole lot of building. Bay Area, June 19-21, 2026.',
   keywords: ['hackathon', 'Bay Area', 'high school', 'Cove Hacks', 'hardware', 'coding'],
   openGraph: {
     title: 'Cove Hacks | 48-Hour Bay Area Hackathon',
-    description: 'The largest high school hackathon ever. 400 hackers, 48 hours, Bay Area. June 17-19, 2026.',
+    description: 'The largest high school hackathon ever. 400 hackers, 48 hours, Bay Area. June 19-21, 2026.',
     type: 'website',
   },
 }
@@ -35,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceMono.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${jetBrainsMono.variable}`}>
       <body className="font-sans antialiased">
         {children}
         <Analytics />

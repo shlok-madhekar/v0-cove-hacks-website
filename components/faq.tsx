@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "Do I need a team?",
-    a: "Nah. You can come solo and meet people at team formation on Wednesday. Teams are 1-4 people.",
+    a: "Nah. You can come solo and find people at team formation on Friday. Teams are 1-4 people.",
   },
   {
     q: "Is it actually free?",
