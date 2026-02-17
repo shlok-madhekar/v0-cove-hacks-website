@@ -26,7 +26,7 @@ export function Footer() {
 
           <div className="flex gap-10">
             <div className="flex flex-col gap-1.5">
-              <p className="font-mono text-[9px] tracking-widest uppercase text-white/12 mb-1">
+              <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-white/15 mb-1">
                 Event
               </p>
               {["About", "Schedule", "Sponsors", "FAQ"].map((l) => (
@@ -40,7 +40,7 @@ export function Footer() {
               ))}
             </div>
             <div className="flex flex-col gap-1.5">
-              <p className="font-mono text-[9px] tracking-widest uppercase text-white/12 mb-1">
+              <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-white/15 mb-1">
                 Connect
               </p>
               <a
@@ -71,12 +71,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="mt-8 pt-5 border-t border-white/5">
           <p className="font-mono text-[10px] text-white/10 tracking-wider">
             2026 Cove Hacks
-          </p>
-          <p className="font-mono text-[10px] text-white/10 tracking-wider">
-            Made with sleep deprivation in the Bay
           </p>
         </div>
       </div>

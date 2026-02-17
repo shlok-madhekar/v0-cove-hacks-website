@@ -4,18 +4,18 @@ export function Schedule() {
       day: "Friday",
       date: "Jun 19",
       vibe: "Doors open, meet your team, start hacking",
-      moments: ["Check-in & opening", "Team formation", "Dinner", "Hacking begins"],
+      moments: ["Check-in & opening ceremony", "Team formation", "Dinner", "Hacking begins"],
     },
     {
       day: "Saturday",
       date: "Jun 20",
-      vibe: "Full day of building, workshops, and vibes",
-      moments: ["Workshops all day", "Meals covered", "Mentor office hours", "Late-night hacking"],
+      vibe: "Full day of building and workshops",
+      moments: ["Workshops all day", "All meals covered", "Mentor office hours", "Late-night hacking"],
     },
     {
       day: "Sunday",
       date: "Jun 21",
-      vibe: "Ship it, show it off, celebrate",
+      vibe: "Ship it, demo it, celebrate",
       moments: ["Final submissions", "Project expo", "Judging & awards", "Closing ceremony"],
     },
   ]
@@ -24,11 +24,14 @@ export function Schedule() {
     <section id="schedule" className="relative py-20 md:py-28 bg-[#1a1a1a]">
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-10">
+          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/20 mb-3">
+            The weekend
+          </p>
           <h2 className="font-sans text-2xl md:text-4xl font-black tracking-tight text-white mb-2">
             Schedule
           </h2>
-          <p className="font-sans text-sm text-white/25">
-            Here&apos;s the rough plan -- we&apos;ll nail down times closer to the event.
+          <p className="font-mono text-xs text-white/25">
+            Rough plan -- we{"'"}ll lock in times closer to the event.
           </p>
         </div>
 
@@ -54,7 +57,7 @@ export function Schedule() {
                     {d.day}
                   </span>
                   <span
-                    className={`font-mono text-xs ${
+                    className={`font-mono text-[10px] tracking-wider ${
                       i === 2 ? "text-[#1a1a1a]/30" : "text-white/30"
                     }`}
                   >
@@ -62,8 +65,8 @@ export function Schedule() {
                   </span>
                 </div>
                 <p
-                  className={`font-sans text-[13px] mt-1 ${
-                    i === 2 ? "text-[#1a1a1a]/40" : "text-white/35"
+                  className={`font-mono text-[11px] tracking-wide mt-1.5 ${
+                    i === 2 ? "text-[#1a1a1a]/35" : "text-white/30"
                   }`}
                 >
                   {d.vibe}
@@ -74,13 +77,13 @@ export function Schedule() {
                 {d.moments.map((m) => (
                   <div key={m} className="flex items-center gap-2.5">
                     <div
-                      className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                      className={`w-1 h-1 rounded-full flex-shrink-0 ${
                         i === 2 ? "bg-[#1a1a1a]/15" : "bg-white/20"
                       }`}
                     />
                     <span
-                      className={`font-sans text-sm ${
-                        i === 2 ? "text-[#1a1a1a]/55" : "text-white/50"
+                      className={`font-sans text-[13px] ${
+                        i === 2 ? "text-[#1a1a1a]/50" : "text-white/45"
                       }`}
                     >
                       {m}
