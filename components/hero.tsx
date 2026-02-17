@@ -100,7 +100,7 @@ export function Hero() {
 
           <div className="flex gap-2.5 w-full sm:w-auto">
             <a
-              href="#register"
+              href="/apply"
               className="font-sans text-sm font-semibold bg-white text-[#5a8abf] px-6 py-2.5 rounded-full hover:bg-white/90 transition-colors flex-1 sm:flex-initial text-center"
             >
               Apply

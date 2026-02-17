@@ -55,7 +55,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="#register"
+              href="/apply"
               className="font-sans text-[13px] font-semibold bg-white/15 hover:bg-white/25 text-white px-5 py-2 rounded-full transition-colors"
             >
               Apply
@@ -84,7 +84,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="#register"
+              href="/apply"
               onClick={() => setOpen(false)}
               className="font-sans text-sm font-semibold bg-white/15 text-white px-5 py-2.5 rounded-full text-center mt-2 hover:bg-white/25 transition-colors"
             >
