@@ -27,7 +27,10 @@ export function Hero() {
   );
 
   return (
-    <section className="relative min-h-[100dvh] flex flex-col bg-[#6B9BD2] overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-[100dvh] flex flex-col bg-[#6B9BD2] overflow-hidden"
+    >
       <div className="flex-1 flex flex-col items-center justify-center px-6 pt-24 pb-8">
         <div
           className={`text-center transition-all duration-700 ease-out ${

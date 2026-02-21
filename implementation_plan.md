@@ -1,41 +1,44 @@
 # Implementation Plan
 
 ## Goal
-1. Replace all contact/sponsor email addresses site-wide with `covehacks@gmail.com`.
-2. Replace the broken "View Prospectus" link with a sleek, closable PDF preview modal that lets users view and download `/Cove Hacks Prospectus.pdf`.
+Add Crackd as the first Gold sponsor, rename sponsor tier labels on the main site to match the real sponsorship tiers (Platinum / Gold / Silver / Bronze), keep skeleton placeholders for all unfilled slots, and ensure the layout is fully responsive.
 
----
+## Context
+- Gold sponsor logo: `public/sponsor-logos/gold/crackd-color.webp`
+- Gold sponsor URL: `https://crackd.it/`
+- Real tiers (from `lib/prospectus-data.ts`): Bronze → Silver → Gold → Platinum
+- Current site uses placeholder tier names: "Title", "Gold", "Community"
 
 ## Proposed Changes
 
-### Email Updates
-- [MODIFY] `components/cta.tsx` — Replace `hello@covehacks.org` (href + display text)
-- [MODIFY] `components/footer.tsx` — Replace `hello@covehacks.org` (href)
-- [MODIFY] `components/sponsors.tsx` — Replace `sponsors@covehacks.org` (href + display text)
-- [MODIFY] `components/prospectus.tsx` — Replace `sponsor@covehacks.org` (href + display text)
-- [MODIFY] `components/prospectus-document.tsx` — Replace `sponsor@covehacks.org` (PDF contact page text)
+| File | Action | Description |
+|---|---|---|
+| `components/sponsors.tsx` | [MODIFY] | Rename tiers to Platinum / Gold / Silver / Bronze; add Crackd real logo card in Gold row; keep skeletons for all other slots; ensure responsive grid at all breakpoints |
 
-### Prospectus PDF Modal
-- [NEW] `components/prospectus-modal.tsx` — New client component: dark glassmorphism modal with iframe PDF preview, close (X) button, and download button. Accepts `isOpen` + `onClose` props.
-- [MODIFY] `components/sponsors.tsx` — Convert to `"use client"`, import `ProspectusModal`, wire up open/close state to "View Prospectus" button.
+## Tier Layout Plan
 
----
+### Platinum (top, most prominent)
+- Grid: `grid-cols-1 sm:grid-cols-2 md:grid-cols-3`
+- Card height: `h-[100px]`
+- Border: dashed, slightly bolder
+- All skeleton
 
-## Implementation Details
+### Gold
+- Grid: `grid-cols-2 sm:grid-cols-3 md:grid-cols-4`
+- Card height: `h-[72px]`
+- Slot 1: **Crackd** — real logo, linked to `https://crackd.it/`, subtle gold ring on hover
+- Slots 2-4: skeleton placeholders
 
-### `ProspectusModal`
-- Full-viewport fixed overlay with `backdrop-blur` and dark tint, animated with Tailwind `transition` classes
-- Centered panel: ~90vw / 90vh max, dark `#111` background, `border border-white/10` rounded corners, shadow
-- Header bar: "Sponsorship Prospectus" title (font-mono, [#6B9BD2]), download anchor (`<a href="/Cove Hacks Prospectus.pdf" download>`), close button (`X` icon from lucide-react)
-- Body: `<iframe src="/Cove Hacks Prospectus.pdf" ...>` filling remaining space
-- Escape key listener to close; click-outside-panel to close
-- `aria-modal` + focus trap basics for accessibility
+### Silver
+- Grid: `grid-cols-2 sm:grid-cols-3 md:grid-cols-4`
+- Card height: `h-[60px]`
+- All skeleton
 
----
+### Bronze
+- Grid: `grid-cols-3 sm:grid-cols-4 md:grid-cols-6`
+- Card height: `h-[44px]`
+- All skeleton
 
 ## Verification Plan
-- `cd cove-site/v0-cove-hacks-website && pnpm build` — must pass with zero errors
-- Visual check: open dev server, click "View Prospectus" in Sponsors section → modal opens with PDF preview
-- Click backdrop or X → modal closes
-- Click Download inside modal → PDF downloads
-- Grep for old emails: `grep -r "covehacks.org\|hello@\|sponsor@\|sponsors@" components/` → zero matches
+- `cd v0-cove-hacks-website && bun run build` — must pass with zero errors
+- Visual check at 375px, 768px, 1280px viewports
