@@ -24,10 +24,10 @@ export function CTA() {
             Apply now
           </a>
           <a
-            href="mailto:hello@covehacks.org"
+            href="mailto:covehacks@gmail.com"
             className="font-mono text-xs text-white/40 border border-white/15 px-8 py-3.5 rounded-full hover:border-white/30 hover:text-white/60 transition-all w-full sm:w-auto text-center"
           >
-            hello@covehacks.org
+            covehacks@gmail.com
           </a>
         </div>
       </div>

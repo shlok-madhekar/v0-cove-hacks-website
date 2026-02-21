@@ -1,62 +1,41 @@
-# Implementation Plan - Fake Backend Transformation
+# Implementation Plan
 
-**Goal**: Convert the application to use a completely fake, in-memory backend to allow running the demo without `.env` files, API keys, or external dependencies (Supabase, Resend).
+## Goal
+1. Replace all contact/sponsor email addresses site-wide with `covehacks@gmail.com`.
+2. Replace the broken "View Prospectus" link with a sleek, closable PDF preview modal that lets users view and download `/Cove Hacks Prospectus.pdf`.
+
+---
 
 ## Proposed Changes
 
-### Data Layer
-- [NEW] `lib/mock-data.ts`
-    - Create TypeScript interfaces for `Application` and `OTP`.
-    - Implement an in-memory `applicationsStore` (Array) initialized with realistic mock data.
-    - Implement an in-memory `otpStore` (Map) for handling verification flows.
-    - Define a list of allowed admin emails (`MOCK_ADMIN_EMAILS`).
+### Email Updates
+- [MODIFY] `components/cta.tsx` — Replace `hello@covehacks.org` (href + display text)
+- [MODIFY] `components/footer.tsx` — Replace `hello@covehacks.org` (href)
+- [MODIFY] `components/sponsors.tsx` — Replace `sponsors@covehacks.org` (href + display text)
+- [MODIFY] `components/prospectus.tsx` — Replace `sponsor@covehacks.org` (href + display text)
+- [MODIFY] `components/prospectus-document.tsx` — Replace `sponsor@covehacks.org` (PDF contact page text)
 
-### Supabase Abstraction
-- [MODIFY] `lib/supabase/client.ts`
-    - Replace the real Supabase client with a dummy object that mimics the expected interface (auth, from, select, etc.) but does nothing or returns null.
-- [MODIFY] `lib/supabase/server.ts`
-    - Replace server-side client with a dummy implementation.
-    - Ensure it still imports `cookies` to satisfy Next.js async component requirements, but mocks the actual DB calls.
-- [MODIFY] `lib/supabase/middleware.ts`
-    - Remove actual Supabase auth checks.
-    - Pass through requests or implement simple cookie presence checks for admin routes if necessary.
+### Prospectus PDF Modal
+- [NEW] `components/prospectus-modal.tsx` — New client component: dark glassmorphism modal with iframe PDF preview, close (X) button, and download button. Accepts `isOpen` + `onClose` props.
+- [MODIFY] `components/sponsors.tsx` — Convert to `"use client"`, import `ProspectusModal`, wire up open/close state to "View Prospectus" button.
 
-### API Routes (Mock Implementation)
-- [MODIFY] `app/api/admin/login/route.ts`
-    - Validate against `MOCK_ADMIN_EMAILS`.
-    - Generate fake OTP (e.g., fixed "123456" or console logged) instead of emailing.
-    - Set a simple cookie session.
-- [MODIFY] `app/api/admin/applications/route.ts`
-    - `GET`: Return data from `applicationsStore`.
-    - `PATCH`: Update status in `applicationsStore`.
-- [MODIFY] `app/api/apply/send-otp/route.ts`
-    - Store OTP in `otpStore`.
-    - Log OTP to console for user visibility.
-- [MODIFY] `app/api/apply/verify-otp/route.ts`
-    - Validate against `otpStore`.
-- [MODIFY] `app/api/apply/submit/route.ts`
-    - Push new application to `applicationsStore`.
-    - Handle duplicate email checks against the in-memory store.
+---
+
+## Implementation Details
+
+### `ProspectusModal`
+- Full-viewport fixed overlay with `backdrop-blur` and dark tint, animated with Tailwind `transition` classes
+- Centered panel: ~90vw / 90vh max, dark `#111` background, `border border-white/10` rounded corners, shadow
+- Header bar: "Sponsorship Prospectus" title (font-mono, [#6B9BD2]), download anchor (`<a href="/Cove Hacks Prospectus.pdf" download>`), close button (`X` icon from lucide-react)
+- Body: `<iframe src="/Cove Hacks Prospectus.pdf" ...>` filling remaining space
+- Escape key listener to close; click-outside-panel to close
+- `aria-modal` + focus trap basics for accessibility
+
+---
 
 ## Verification Plan
-
-### Automated Verification
-- Run `bun run build` to ensure type safety with the new mock interfaces.
-- Run `bun run lint` to check for any unused imports or errors.
-
-### Manual Verification Scenarios
-1. **Admin Login**:
-   - Go to `/admin`.
-   - Login with `admin@covehacks.org`.
-   - Check server console for OTP (should be "123456" or logged).
-   - Verify dashboard loads with mock data.
-2. **Application Flow**:
-   - Go to `/apply`.
-   - Enter email.
-   - Check console for OTP.
-   - Complete form.
-   - Submit.
-3. **Admin Update**:
-   - Refresh admin dashboard.
-   - Verify new application appears.
-   - Accept/Reject the application and verify status change.
+- `cd cove-site/v0-cove-hacks-website && pnpm build` — must pass with zero errors
+- Visual check: open dev server, click "View Prospectus" in Sponsors section → modal opens with PDF preview
+- Click backdrop or X → modal closes
+- Click Download inside modal → PDF downloads
+- Grep for old emails: `grep -r "covehacks.org\|hello@\|sponsor@\|sponsors@" components/` → zero matches

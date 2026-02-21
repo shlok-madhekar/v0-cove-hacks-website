@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -44,25 +44,23 @@ export function Footer() {
                 Connect
               </p>
               <a
-                href="mailto:hello@covehacks.org"
+                href="mailto:covehacks@gmail.com"
                 className="font-sans text-xs text-white/25 hover:text-white/50 transition-colors"
               >
                 Email
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/covehacks/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-sans text-xs text-white/25 hover:text-white/50 transition-colors"
               >
                 Instagram
               </a>
               <a
-                href="#"
-                className="font-sans text-xs text-white/25 hover:text-white/50 transition-colors"
-              >
-                Twitter
-              </a>
-              <a
-                href="#"
+                href="https://discord.gg/9YQWhpdpGd"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-sans text-xs text-white/25 hover:text-white/50 transition-colors"
               >
                 Discord
@@ -78,5 +76,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
