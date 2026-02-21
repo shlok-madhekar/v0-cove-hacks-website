@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "About", href: "#about" },
   { label: "Schedule", href: "#schedule" },
   { label: "Sponsors", href: "#sponsors" },
   { label: "FAQ", href: "#faq" },
-]
+];
 
 export function Navbar() {
-  const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-3 pt-3">
@@ -55,7 +55,9 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="/apply"
+              href="https://lu.ma/p7fs725f"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-sans text-[13px] font-semibold bg-white/15 hover:bg-white/25 text-white px-5 py-2 rounded-full transition-colors"
             >
               Apply
@@ -84,8 +86,10 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="/apply"
+              href="https://lu.ma/p7fs725f"
               onClick={() => setOpen(false)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-sans text-sm font-semibold bg-white/15 text-white px-5 py-2.5 rounded-full text-center mt-2 hover:bg-white/25 transition-colors"
             >
               Apply
@@ -94,5 +98,5 @@ export function Navbar() {
         )}
       </div>
     </nav>
-  )
+  );
 }

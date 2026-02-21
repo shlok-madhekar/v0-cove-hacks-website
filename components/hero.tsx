@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 function useCountdown(target: Date) {
-  const [diff, setDiff] = useState(0)
+  const [diff, setDiff] = useState(0);
   useEffect(() => {
-    const tick = () => setDiff(Math.max(0, target.getTime() - Date.now()))
-    tick()
-    const id = setInterval(tick, 1000)
-    return () => clearInterval(id)
-  }, [target])
+    const tick = () => setDiff(Math.max(0, target.getTime() - Date.now()));
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, [target]);
   return {
     days: Math.floor(diff / 86400000),
     hours: Math.floor((diff % 86400000) / 3600000),
     mins: Math.floor((diff % 3600000) / 60000),
     secs: Math.floor((diff % 60000) / 1000),
-  }
+  };
 }
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const { days, hours, mins, secs } = useCountdown(
-    new Date("2026-06-19T09:00:00-07:00")
-  )
+    new Date("2026-06-19T09:00:00-07:00"),
+  );
 
   return (
     <section className="relative min-h-[100dvh] flex flex-col bg-[#6B9BD2] overflow-hidden">
@@ -62,7 +62,10 @@ export function Hero() {
               { val: mins, label: "m" },
               { val: secs, label: "s" },
             ].map((unit, i) => (
-              <div key={unit.label} className="flex items-baseline gap-2 sm:gap-4">
+              <div
+                key={unit.label}
+                className="flex items-baseline gap-2 sm:gap-4"
+              >
                 <div className="flex items-baseline gap-0.5">
                   <span className="font-mono text-3xl sm:text-5xl md:text-6xl font-bold text-white tabular-nums leading-none">
                     {String(unit.val).padStart(2, "0")}
@@ -100,7 +103,9 @@ export function Hero() {
 
           <div className="flex gap-2.5 w-full sm:w-auto">
             <a
-              href="/apply"
+              href="https://lu.ma/p7fs725f"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-sans text-sm font-semibold bg-white text-[#5a8abf] px-6 py-2.5 rounded-full hover:bg-white/90 transition-colors flex-1 sm:flex-initial text-center"
             >
               Apply
@@ -115,5 +120,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

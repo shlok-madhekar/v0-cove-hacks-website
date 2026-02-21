@@ -16,7 +16,9 @@ export function CTA() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="/apply"
+            href="https://lu.ma/p7fs725f"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-sans text-sm font-semibold bg-white text-[#5a8abf] px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors w-full sm:w-auto text-center"
           >
             Apply now
@@ -30,5 +32,5 @@ export function CTA() {
         </div>
       </div>
     </section>
-  )
+  );
 }
