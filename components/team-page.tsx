@@ -26,9 +26,9 @@ const EXEC_TEAM: Team = {
   description: "The core leadership team steering Cove Hacks.",
   members: [
     {
-      name: "Apply Now",
+      name: "Neil Bharwani",
       role: "Head of Design",
-      link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+      link: "https://neilbharwani.dev",
     },
     {
       name: "Neel Patil",
@@ -96,9 +96,9 @@ const SUB_TEAMS: Team[] = [
     description: "Brand, visual identity, and everything you see on screen.",
     members: [
       {
-        name: "Apply Now",
+        name: "Neil Bharwani",
         role: "Lead",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+        link: "https://neilbharwani.dev",
       },
       {
         name: "Apply Now",
