@@ -180,6 +180,28 @@ const SUB_TEAMS: Team[] = [
       },
     ],
   },
+  {
+    name: "Volunteers",
+    description:
+      "Day-of crew making sure everything runs smoothly on the ground.",
+    members: [
+      {
+        name: "Devin Liu",
+        role: "Volunteer",
+        link: "https://www.linkedin.com/in/devin-liu-6aa1b9325",
+      },
+      {
+        name: "Apply Now",
+        role: "Volunteer",
+        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+      },
+      {
+        name: "Apply Now",
+        role: "Volunteer",
+        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+      },
+    ],
+  },
 ];
 
 function ExecRow({ member }: { member: TeamMember }) {
@@ -321,7 +343,7 @@ export function TeamPage() {
             </div>
           </div>
 
-          {/* Row 2 — 3 / 5 / 4 split (mirrored asymmetry) */}
+          {/* Row 2 — 3 / 3 / 3 / 3 split */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
             {/* Design — cream, compact */}
             <div className="lg:col-span-3 bg-[#FAFAF7] rounded-2xl p-5 sm:p-6 flex flex-col">
@@ -343,8 +365,8 @@ export function TeamPage() {
               </div>
             </div>
 
-            {/* Marketing — dark, wide (big team) */}
-            <div className="lg:col-span-5 bg-[#222] rounded-2xl p-5 sm:p-6 flex flex-col">
+            {/* Marketing — dark */}
+            <div className="lg:col-span-3 bg-[#222] rounded-2xl p-5 sm:p-6 flex flex-col">
               <div className="mb-2">
                 <h3 className="font-sans text-base font-bold text-white tracking-tight">
                   {SUB_TEAMS[2].name}
@@ -361,7 +383,7 @@ export function TeamPage() {
             </div>
 
             {/* Logistics & Ops — cream */}
-            <div className="lg:col-span-4 bg-[#F0EDE6] rounded-2xl p-5 sm:p-6 flex flex-col">
+            <div className="lg:col-span-3 bg-[#F0EDE6] rounded-2xl p-5 sm:p-6 flex flex-col">
               <div className="mb-4">
                 <h3 className="font-sans text-base font-bold text-[#1a1a1a] tracking-tight">
                   {SUB_TEAMS[3].name}
@@ -376,6 +398,23 @@ export function TeamPage() {
                     key={`${SUB_TEAMS[3].name}-${i}`}
                     member={member}
                   />
+                ))}
+              </div>
+            </div>
+
+            {/* Volunteers — blue tint */}
+            <div className="lg:col-span-3 bg-[#6B9BD2]/10 rounded-2xl p-5 sm:p-6 flex flex-col border border-[#6B9BD2]/10">
+              <div className="mb-4">
+                <h3 className="font-sans text-base font-bold text-white tracking-tight">
+                  {SUB_TEAMS[4].name}
+                </h3>
+                <p className="font-mono text-[10px] text-white/35 mt-1 leading-relaxed">
+                  {SUB_TEAMS[4].description}
+                </p>
+              </div>
+              <div className="flex flex-col border-t border-white/[0.08] pt-2 mt-auto">
+                {SUB_TEAMS[4].members.map((member, i) => (
+                  <ExecRow key={`${SUB_TEAMS[4].name}-${i}`} member={member} />
                 ))}
               </div>
             </div>
