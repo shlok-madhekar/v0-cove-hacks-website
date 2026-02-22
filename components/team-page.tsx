@@ -18,7 +18,7 @@ interface Team {
 const LEAD: TeamMember = {
   name: "Shlok Madhekar",
   role: "Lead Organizer",
-  link: "https://shlok.vercel.app/",
+  link: "https://www.instagram.com/shlok.madhekar/",
 };
 
 const EXEC_TEAM: Team = {
@@ -204,44 +204,50 @@ const SUB_TEAMS: Team[] = [
   },
 ];
 
-function ExecRow({ member }: { member: TeamMember }) {
+function MemberRow({
+  member,
+  variant = "dark",
+}: {
+  member: TeamMember;
+  variant?: "dark" | "light";
+}) {
+  const isDark = variant === "dark";
   return (
     <a
       href={member.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center justify-between py-3 border-b border-white/[0.08] last:border-b-0 transition-colors hover:bg-white/[0.04] -mx-3 px-3 rounded-lg"
+      className={`group flex items-center justify-between py-3.5 -mx-3 px-3 rounded-lg transition-colors ${
+        isDark
+          ? "border-b border-white/[0.08] last:border-b-0 hover:bg-white/[0.04]"
+          : "hover:bg-[#1a1a1a]/[0.03]"
+      }`}
     >
       <div className="flex items-baseline gap-3 min-w-0">
-        <span className="font-sans text-[14px] font-semibold text-white truncate">
+        <span
+          className={`font-sans text-[13px] font-semibold truncate transition-colors ${
+            isDark
+              ? "text-white"
+              : "text-[#1a1a1a]/80 group-hover:text-[#1a1a1a]"
+          }`}
+        >
           {member.name}
         </span>
-        <span className="font-mono text-[10px] tracking-wider text-white/35 uppercase shrink-0">
+        <span
+          className={`font-mono text-[10px] tracking-wider uppercase shrink-0 ${
+            isDark ? "text-white/35" : "text-[#1a1a1a]/30"
+          }`}
+        >
           {member.role}
         </span>
       </div>
-      <ArrowUpRight className="w-3.5 h-3.5 text-white/0 group-hover:text-white/50 transition-colors shrink-0 ml-3" />
-    </a>
-  );
-}
-
-function RosterRow({ member }: { member: TeamMember }) {
-  return (
-    <a
-      href={member.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex items-center justify-between py-2.5 transition-colors hover:bg-[#1a1a1a]/[0.03] -mx-2 px-2 rounded-md"
-    >
-      <div className="flex items-baseline gap-2.5 min-w-0">
-        <span className="font-sans text-[13px] font-medium text-[#1a1a1a]/80 group-hover:text-[#1a1a1a] truncate transition-colors">
-          {member.name}
-        </span>
-        <span className="font-mono text-[9px] tracking-wider text-[#1a1a1a]/30 uppercase shrink-0">
-          {member.role}
-        </span>
-      </div>
-      <ArrowUpRight className="w-3 h-3 text-[#1a1a1a]/0 group-hover:text-[#1a1a1a]/35 transition-colors shrink-0 ml-2" />
+      <ArrowUpRight
+        className={`w-3.5 h-3.5 shrink-0 ml-3 transition-colors ${
+          isDark
+            ? "text-white/0 group-hover:text-white/50"
+            : "text-[#1a1a1a]/0 group-hover:text-[#1a1a1a]/35"
+        }`}
+      />
     </a>
   );
 }
@@ -274,20 +280,20 @@ export function TeamPage() {
       </section>
 
       {/* Bento Grid — all teams */}
-      <section className="px-6 pb-16 sm:pb-24">
+      <section className="px-6 pb-20 sm:pb-28">
         <div
           className={`max-w-5xl mx-auto transition-all duration-700 delay-100 ease-out ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
           {/* Row 1 — 3 / 4 / 5 split */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 mb-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 mb-4">
             {/* Lead organizer — blue accent */}
             <a
               href={LEAD.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group lg:col-span-3 bg-[#6B9BD2] rounded-2xl p-5 sm:p-6 flex flex-col justify-between min-h-[180px] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(107,155,210,0.2)]"
+              className="group lg:col-span-3 bg-[#6B9BD2] rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[200px] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(107,155,210,0.2)]"
             >
               <div className="flex items-start justify-between">
                 <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/50">
@@ -296,7 +302,7 @@ export function TeamPage() {
                 <ArrowUpRight className="w-3.5 h-3.5 text-white/25 group-hover:text-white/70 transition-colors" />
               </div>
               <div>
-                <p className="font-sans text-lg font-bold text-white tracking-tight leading-tight">
+                <p className="font-sans text-xl font-black text-white tracking-tight leading-tight">
                   {LEAD.name}
                 </p>
                 <p className="font-mono text-[10px] text-white/45 mt-1.5">
@@ -306,8 +312,8 @@ export function TeamPage() {
             </a>
 
             {/* Exec — dark */}
-            <div className="lg:col-span-4 bg-[#222] rounded-2xl p-5 sm:p-6 flex flex-col">
-              <div className="mb-2">
+            <div className="lg:col-span-4 bg-[#222] rounded-2xl p-6 sm:p-7 flex flex-col">
+              <div className="mb-4">
                 <h3 className="font-sans text-base font-bold text-white tracking-tight">
                   {EXEC_TEAM.name}
                 </h3>
@@ -315,16 +321,16 @@ export function TeamPage() {
                   {EXEC_TEAM.description}
                 </p>
               </div>
-              <div className="flex flex-col border-t border-white/[0.08] pt-2 mt-auto">
+              <div className="flex flex-col border-t border-white/[0.08] pt-3 mt-auto">
                 {EXEC_TEAM.members.map((member, i) => (
-                  <ExecRow key={`exec-${i}`} member={member} />
+                  <MemberRow key={`exec-${i}`} member={member} variant="dark" />
                 ))}
               </div>
             </div>
 
             {/* Sponsorship — cream, wider (biggest team) */}
-            <div className="lg:col-span-5 bg-[#F0EDE6] rounded-2xl p-5 sm:p-6 flex flex-col">
-              <div className="mb-4">
+            <div className="lg:col-span-5 bg-[#F0EDE6] rounded-2xl p-6 sm:p-7 flex flex-col">
+              <div className="mb-5">
                 <h3 className="font-sans text-base font-bold text-[#1a1a1a] tracking-tight">
                   {SUB_TEAMS[0].name}
                 </h3>
@@ -334,20 +340,21 @@ export function TeamPage() {
               </div>
               <div className="flex flex-col border-t border-[#1a1a1a]/[0.06] pt-3 mt-auto">
                 {SUB_TEAMS[0].members.map((member, i) => (
-                  <RosterRow
+                  <MemberRow
                     key={`${SUB_TEAMS[0].name}-${i}`}
                     member={member}
+                    variant="light"
                   />
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Row 2 — 3 / 3 / 3 / 3 split */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
-            {/* Design — cream, compact */}
-            <div className="lg:col-span-3 bg-[#FAFAF7] rounded-2xl p-5 sm:p-6 flex flex-col">
-              <div className="mb-4">
+          {/* Row 2 — 3 / 4 / 4 / 3 split on 14-col grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[3fr_4fr_4fr_3fr] gap-4">
+            {/* Design — cream */}
+            <div className="bg-[#FAFAF7] rounded-2xl p-6 sm:p-7 flex flex-col">
+              <div className="mb-5">
                 <h3 className="font-sans text-base font-bold text-[#1a1a1a] tracking-tight">
                   {SUB_TEAMS[1].name}
                 </h3>
@@ -357,17 +364,18 @@ export function TeamPage() {
               </div>
               <div className="flex flex-col border-t border-[#1a1a1a]/[0.06] pt-3 mt-auto">
                 {SUB_TEAMS[1].members.map((member, i) => (
-                  <RosterRow
+                  <MemberRow
                     key={`${SUB_TEAMS[1].name}-${i}`}
                     member={member}
+                    variant="light"
                   />
                 ))}
               </div>
             </div>
 
             {/* Marketing — dark */}
-            <div className="lg:col-span-3 bg-[#222] rounded-2xl p-5 sm:p-6 flex flex-col">
-              <div className="mb-2">
+            <div className="bg-[#222] rounded-2xl p-6 sm:p-7 flex flex-col">
+              <div className="mb-4">
                 <h3 className="font-sans text-base font-bold text-white tracking-tight">
                   {SUB_TEAMS[2].name}
                 </h3>
@@ -375,16 +383,20 @@ export function TeamPage() {
                   {SUB_TEAMS[2].description}
                 </p>
               </div>
-              <div className="flex flex-col border-t border-white/[0.08] pt-2 mt-auto">
+              <div className="flex flex-col border-t border-white/[0.08] pt-3 mt-auto">
                 {SUB_TEAMS[2].members.map((member, i) => (
-                  <ExecRow key={`${SUB_TEAMS[2].name}-${i}`} member={member} />
+                  <MemberRow
+                    key={`${SUB_TEAMS[2].name}-${i}`}
+                    member={member}
+                    variant="dark"
+                  />
                 ))}
               </div>
             </div>
 
             {/* Logistics & Ops — cream */}
-            <div className="lg:col-span-3 bg-[#F0EDE6] rounded-2xl p-5 sm:p-6 flex flex-col">
-              <div className="mb-4">
+            <div className="bg-[#F0EDE6] rounded-2xl p-6 sm:p-7 flex flex-col">
+              <div className="mb-5">
                 <h3 className="font-sans text-base font-bold text-[#1a1a1a] tracking-tight">
                   {SUB_TEAMS[3].name}
                 </h3>
@@ -394,17 +406,18 @@ export function TeamPage() {
               </div>
               <div className="flex flex-col border-t border-[#1a1a1a]/[0.06] pt-3 mt-auto">
                 {SUB_TEAMS[3].members.map((member, i) => (
-                  <RosterRow
+                  <MemberRow
                     key={`${SUB_TEAMS[3].name}-${i}`}
                     member={member}
+                    variant="light"
                   />
                 ))}
               </div>
             </div>
 
             {/* Volunteers — blue tint */}
-            <div className="lg:col-span-3 bg-[#6B9BD2]/10 rounded-2xl p-5 sm:p-6 flex flex-col border border-[#6B9BD2]/10">
-              <div className="mb-4">
+            <div className="bg-[#6B9BD2]/10 rounded-2xl p-6 sm:p-7 flex flex-col border border-[#6B9BD2]/10">
+              <div className="mb-5">
                 <h3 className="font-sans text-base font-bold text-white tracking-tight">
                   {SUB_TEAMS[4].name}
                 </h3>
@@ -412,9 +425,13 @@ export function TeamPage() {
                   {SUB_TEAMS[4].description}
                 </p>
               </div>
-              <div className="flex flex-col border-t border-white/[0.08] pt-2 mt-auto">
+              <div className="flex flex-col border-t border-white/[0.08] pt-3 mt-auto">
                 {SUB_TEAMS[4].members.map((member, i) => (
-                  <ExecRow key={`${SUB_TEAMS[4].name}-${i}`} member={member} />
+                  <MemberRow
+                    key={`${SUB_TEAMS[4].name}-${i}`}
+                    member={member}
+                    variant="dark"
+                  />
                 ))}
               </div>
             </div>
