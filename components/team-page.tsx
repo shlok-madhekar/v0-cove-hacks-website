@@ -60,9 +60,9 @@ const SUB_TEAMS: Team[] = [
         link: "https://www.linkedin.com/in/neel-patil-a04652354",
       },
       {
-        name: "Apply Now",
+        name: "Anish Dhamija",
         role: "Outreach",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+        link: "https://www.linkedin.com/in/anish-dhamija-5b93712b3/",
       },
       {
         name: "Apply Now",
