@@ -56,7 +56,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="https://discord.gg/9YQWhpdpGd"
+              href="https://discord.gg/FYyGNr3Ku7"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Join our Discord"
@@ -96,7 +96,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="https://discord.gg/9YQWhpdpGd"
+              href="https://discord.gg/FYyGNr3Ku7"
               onClick={() => setOpen(false)}
               target="_blank"
               rel="noopener noreferrer"

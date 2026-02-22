@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/prospectus"],
       },
     ],
     sitemap: "https://covehacks.dev/sitemap.xml",

@@ -1,33 +1,30 @@
-# Implementation Plan: SEO Overhaul & OG Image
+# Implementation Plan
 
 ## Goal
-
-Massively upgrade the SEO metadata across the Cove Hacks site and add a dynamically generated OpenGraph image that renders a beautiful branded preview (NOT the sun logo, NOT the countdown timer) when shared on iMessage, Twitter, Discord, etc.
+1. Create a custom 404 page that matches the Cove Hacks visual identity (blue `#6B9BD2` background, DM Sans + JetBrains Mono fonts, white text, smooth animations).
+2. Remove `/prospectus` from the sitemap.
+3. Block access to the `/prospectus` route by redirecting visitors to the homepage.
 
 ## Proposed Changes
 
-| File | Action | Description |
-|---|---|---|
-| `app/opengraph-image.tsx` | [NEW] | Dynamic OG image (1200×630) via `next/og` — recreates hero aesthetic with blue gradient, "COVE HACKS" title, tagline, date, stats. No countdown. |
-| `app/twitter-image.tsx` | [NEW] | Twitter card image (1200×630) — same design as OG image, optimized for Twitter/X large summary card. |
-| `app/layout.tsx` | [MODIFY] | Full metadata overhaul: `metadataBase`, comprehensive OpenGraph, Twitter card, keywords, canonical, robots, authors, JSON-LD structured data for the event. |
-| `app/robots.ts` | [NEW] | Programmatic `robots.txt` via Next.js metadata API — allow all crawlers, reference sitemap. |
-| `app/sitemap.ts` | [NEW] | Programmatic `sitemap.xml` via Next.js metadata API — index `/`, `/team`, `/prospectus`. |
-| `components/json-ld.tsx` | [NEW] | Server component that injects JSON-LD structured data (Event schema) into the page `<head>`. |
-| `app/page.tsx` | [MODIFY] | Import and render `<JsonLd />` component. |
+| File | Action |
+|---|---|
+| `app/not-found.tsx` | **[NEW]** Custom 404 page with on-brand styling, animated entrance, and a "Go Home" CTA |
+| `app/sitemap.ts` | **[MODIFY]** Remove the `/prospectus` entry from the sitemap array |
+| `next.config.mjs` | **[MODIFY]** Add a permanent redirect from `/prospectus` to `/` so no one can visit the page |
+| `app/prospectus/page.tsx` | **[DELETE]** Remove the prospectus route entirely |
 
-## Key Decisions
-
-- **Dynamic OG image over static screenshot**: A static screenshot would go stale. `next/og` renders at request time and always matches the brand.
-- **No countdown in OG image**: The countdown is dynamic and a frozen timestamp in a social preview makes zero sense.
-- **`metadataBase` set to `https://covehacks.dev`**: All relative OG/Twitter image URLs resolve against this.
-- **JSON-LD Event schema**: Gives Google rich results for the hackathon event (date, location, description, registration link).
+## Design Notes — 404 Page
+- Full-viewport height with `#6B9BD2` background to match the hero section
+- Large "404" heading in DM Sans (font-black), echoing the hero's `COVE HACKS` treatment
+- Monospace subtitle and description in JetBrains Mono with `white/60` opacity
+- Fade-in + translate-up entrance animation (client component with `useEffect` mount state)
+- "Go Home" pill button matching hero CTA styling (`bg-white text-[#5a8abf]`)
+- Navbar included for consistent navigation
+- Fully responsive
 
 ## Verification Plan
-
-- `cd v0-cove-hacks-website && npx next build` — must pass with zero errors
-- Visit `/opengraph-image` directly in browser to confirm the image renders
-- Visit `/twitter-image` directly in browser to confirm the image renders
-- Validate OG tags with https://www.opengraph.xyz/ or Facebook Sharing Debugger
-- Validate structured data with https://search.google.com/test/rich-results
-- Check `/robots.txt` and `/sitemap.xml` routes in browser
+- `bun run build` — confirm no build errors and 404 page is generated
+- Visit a non-existent route to confirm the 404 page renders
+- Visit `/prospectus` to confirm it redirects to `/`
+- Check `/sitemap.xml` to confirm prospectus is no longer listed

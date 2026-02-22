@@ -58,7 +58,7 @@ export function JsonLd() {
     url: "https://covehacks.dev",
     email: "team@covehacks.dev",
     sameAs: [
-      "https://discord.gg/9YQWhpdpGd",
+      "https://discord.gg/FYyGNr3Ku7",
       "https://www.instagram.com/covehacks/",
     ],
     logo: "https://covehacks.dev/images/cove-logo.png",

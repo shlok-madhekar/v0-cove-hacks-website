@@ -64,7 +64,7 @@ export function Footer() {
                 Instagram
               </a>
               <a
-                href="https://discord.gg/9YQWhpdpGd"
+                href="https://discord.gg/FYyGNr3Ku7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-sans text-xs text-white/50 hover:text-white/65 transition-colors"
