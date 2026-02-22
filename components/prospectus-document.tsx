@@ -281,26 +281,30 @@ export const ProspectusDocument = () => (
           ))}
         </View>
 
-        <Text style={[styles.titleMedium, { marginTop: 10 }]}>
-          Past Sponsors
-        </Text>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-          {PROSPECTUS_DATA.pastSponsors.map((sponsor, i) => (
-            <View
-              key={i}
-              style={{
-                backgroundColor: COLORS.surfaceHighlight,
-                paddingHorizontal: 12,
-                paddingVertical: 6,
-                borderRadius: 4,
-              }}
-            >
-              <Text style={{ color: COLORS.textMuted, fontSize: 9 }}>
-                {sponsor}
-              </Text>
+        {PROSPECTUS_DATA.pastSponsors.length > 0 && (
+          <>
+            <Text style={[styles.titleMedium, { marginTop: 10 }]}>
+              Past Sponsors
+            </Text>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+              {PROSPECTUS_DATA.pastSponsors.map((sponsor, i) => (
+                <View
+                  key={i}
+                  style={{
+                    backgroundColor: COLORS.surfaceHighlight,
+                    paddingHorizontal: 12,
+                    paddingVertical: 6,
+                    borderRadius: 4,
+                  }}
+                >
+                  <Text style={{ color: COLORS.textMuted, fontSize: 9 }}>
+                    {sponsor}
+                  </Text>
+                </View>
+              ))}
             </View>
-          ))}
-        </View>
+          </>
+        )}
       </View>
       <Footer />
     </Page>

@@ -47,16 +47,7 @@ export const PROSPECTUS_DATA = {
       { name: "Veteran (5+)", percent: 20 },
     ],
   },
-  pastSponsors: [
-    "Vercel",
-    "Supabase",
-    "GitHub",
-    "OpenAI",
-    "Figma",
-    "DigitalOcean",
-    "Twilio",
-    "Stripe",
-  ],
+  pastSponsors: [],
   tiers: [
     { name: "Bronze", price: "$1k", color: "#CD7F32" },
     { name: "Silver", price: "$2.5k", color: "#C0C0C0" },

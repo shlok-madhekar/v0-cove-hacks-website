@@ -165,21 +165,25 @@ export function Prospectus() {
           </div>
 
           <div className="bg-white/[0.02] border border-white/10 rounded-3xl p-8 sm:p-12">
-            <h4 className="font-mono text-xs text-[#6B9BD2] uppercase tracking-widest font-bold mb-6 text-center">
-              Past Sponsors
-            </h4>
-            <div className="flex flex-wrap justify-center gap-4">
-              {PROSPECTUS_DATA.pastSponsors.map((sponsor) => (
-                <div
-                  key={sponsor}
-                  className="px-4 py-2 bg-white/5 rounded-lg border border-white/5 text-white/70 font-sans text-sm font-medium"
-                >
-                  {sponsor}
+            {PROSPECTUS_DATA.pastSponsors.length > 0 && (
+              <>
+                <h4 className="font-mono text-xs text-[#6B9BD2] uppercase tracking-widest font-bold mb-6 text-center">
+                  Past Sponsors
+                </h4>
+                <div className="flex flex-wrap justify-center gap-4 mb-12 pb-12 border-b border-white/10">
+                  {PROSPECTUS_DATA.pastSponsors.map((sponsor) => (
+                    <div
+                      key={sponsor}
+                      className="px-4 py-2 bg-white/5 rounded-lg border border-white/5 text-white/70 font-sans text-sm font-medium"
+                    >
+                      {sponsor}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            )}
 
-            <div className="mt-12 pt-12 border-t border-white/10">
+            <div>
               <h4 className="font-mono text-xs text-[#6B9BD2] uppercase tracking-widest font-bold mb-6 text-center">
                 Experience Level
               </h4>
