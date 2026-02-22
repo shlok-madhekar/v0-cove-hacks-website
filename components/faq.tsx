@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
@@ -36,13 +36,13 @@ const faqs = [
     q: "Can I start building before the event?",
     a: "You can brainstorm and plan, but all building happens during the 48 hours. Open-source stuff and public APIs are fair game.",
   },
-]
+];
 
 export function FAQ() {
   return (
     <section id="faq" className="relative py-20 md:py-28 bg-[#FAFAF7]">
       <div className="mx-auto max-w-2xl px-6">
-        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/25 mb-3">
+        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/45 mb-3">
           Questions
         </p>
         <h2 className="font-sans text-2xl md:text-4xl font-black tracking-tight text-[#1a1a1a] mb-8">
@@ -59,7 +59,7 @@ export function FAQ() {
               <AccordionTrigger className="font-sans text-[13px] sm:text-sm font-semibold text-[#1a1a1a] hover:no-underline py-4 text-left">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="font-sans text-[13px] text-[#1a1a1a]/45 leading-relaxed pb-4">
+              <AccordionContent className="font-sans text-[13px] text-[#1a1a1a]/60 leading-relaxed pb-4">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>
@@ -67,5 +67,5 @@ export function FAQ() {
         </Accordion>
       </div>
     </section>
-  )
+  );
 }

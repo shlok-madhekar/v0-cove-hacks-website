@@ -2,7 +2,7 @@ export function CTA() {
   return (
     <section id="register" className="relative py-24 md:py-32 bg-[#6B9BD2]">
       <div className="text-center px-6 max-w-xl mx-auto">
-        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/30 mb-6">
+        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/50 mb-6">
           Applications open
         </p>
 
@@ -10,7 +10,7 @@ export function CTA() {
           Come build something.
         </h2>
 
-        <p className="font-mono text-xs sm:text-sm text-white/35 mb-10">
+        <p className="font-mono text-xs sm:text-sm text-white/60 mb-10">
           June 19&ndash;21 &middot; Bay Area &middot; 100% free
         </p>
 
@@ -24,10 +24,10 @@ export function CTA() {
             Apply now
           </a>
           <a
-            href="mailto:covehacks@gmail.com"
-            className="font-mono text-xs text-white/40 border border-white/15 px-8 py-3.5 rounded-full hover:border-white/30 hover:text-white/60 transition-all w-full sm:w-auto text-center"
+            href="mailto:team@covehacks.dev"
+            className="font-mono text-xs text-white/60 border border-white/25 px-8 py-3.5 rounded-full hover:border-white/40 hover:text-white/80 transition-all w-full sm:w-auto text-center"
           >
-            covehacks@gmail.com
+            team@covehacks.dev
           </a>
         </div>
       </div>

@@ -17,7 +17,7 @@ export function Footer() {
                 Cove Hacks
               </span>
             </div>
-            <p className="font-sans text-xs text-white/20 max-w-xs leading-relaxed">
+            <p className="font-sans text-xs text-white/45 max-w-xs leading-relaxed">
               The largest high school hackathon ever.
               <br />
               June 19&ndash;21, 2026 &middot; Bay Area, CA
@@ -26,26 +26,32 @@ export function Footer() {
 
           <div className="flex gap-10">
             <div className="flex flex-col gap-1.5">
-              <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-white/15 mb-1">
+              <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-white/35 mb-1">
                 Event
               </p>
               {["About", "Schedule", "Sponsors", "FAQ"].map((l) => (
                 <a
                   key={l}
-                  href={`#${l.toLowerCase()}`}
-                  className="font-sans text-xs text-white/25 hover:text-white/50 transition-colors"
+                  href={`/#${l.toLowerCase()}`}
+                  className="font-sans text-xs text-white/50 hover:text-white/65 transition-colors"
                 >
                   {l}
                 </a>
               ))}
+              <a
+                href="/team"
+                className="font-sans text-xs text-white/50 hover:text-white/65 transition-colors"
+              >
+                Team
+              </a>
             </div>
             <div className="flex flex-col gap-1.5">
-              <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-white/15 mb-1">
+              <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-white/35 mb-1">
                 Connect
               </p>
               <a
-                href="mailto:covehacks@gmail.com"
-                className="font-sans text-xs text-white/25 hover:text-white/50 transition-colors"
+                href="mailto:team@covehacks.dev"
+                className="font-sans text-xs text-white/50 hover:text-white/65 transition-colors"
               >
                 Email
               </a>
@@ -53,7 +59,7 @@ export function Footer() {
                 href="https://www.instagram.com/covehacks/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-xs text-white/25 hover:text-white/50 transition-colors"
+                className="font-sans text-xs text-white/50 hover:text-white/65 transition-colors"
               >
                 Instagram
               </a>
@@ -61,7 +67,7 @@ export function Footer() {
                 href="https://discord.gg/9YQWhpdpGd"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-xs text-white/25 hover:text-white/50 transition-colors"
+                className="font-sans text-xs text-white/50 hover:text-white/65 transition-colors"
               >
                 Discord
               </a>
@@ -69,8 +75,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-5 border-t border-white/5">
-          <p className="font-mono text-[10px] text-white/10 tracking-wider">
+        <div className="mt-8 pt-5 border-t border-white/10">
+          <p className="font-mono text-[10px] text-white/30 tracking-wider">
             2026 Cove Hacks
           </p>
         </div>

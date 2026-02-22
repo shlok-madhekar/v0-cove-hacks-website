@@ -18,10 +18,11 @@ function DiscordIcon({ className }: { className?: string }) {
 }
 
 const links = [
-  { label: "About", href: "#about" },
-  { label: "Schedule", href: "#schedule" },
-  { label: "Sponsors", href: "#sponsors" },
-  { label: "FAQ", href: "#faq" },
+  { label: "About", href: "/#about" },
+  { label: "Schedule", href: "/#schedule" },
+  { label: "Sponsors", href: "/#sponsors" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Team", href: "/team" },
 ];
 
 export function Navbar() {
@@ -31,7 +32,7 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 px-3 pt-3">
       <div className="mx-auto max-w-5xl rounded-2xl bg-[#6B9BD2]/80 backdrop-blur-2xl ring-1 ring-white/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
         <div className="flex items-center justify-between px-5 py-3">
-          <a href="#" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <Image
               src="/images/cove-logo-nobg.png"
               alt="Cove Hacks"
@@ -49,7 +50,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="font-sans text-[13px] text-white/55 hover:text-white transition-colors"
+                className="font-sans text-[13px] text-white/70 hover:text-white transition-colors"
               >
                 {link.label}
               </a>
@@ -59,7 +60,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Join our Discord"
-              className="text-white/60 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white transition-colors"
             >
               <DiscordIcon className="w-[18px] h-[18px]" />
             </a>
@@ -89,7 +90,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-sans text-sm text-white/60 hover:text-white transition-colors py-2"
+                className="font-sans text-sm text-white/70 hover:text-white transition-colors py-2"
               >
                 {link.label}
               </a>
@@ -99,7 +100,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-sans text-sm text-white/60 hover:text-white transition-colors py-2 flex items-center gap-2"
+              className="font-sans text-sm text-white/70 hover:text-white transition-colors py-2 flex items-center gap-2"
             >
               <DiscordIcon className="w-4 h-4" />
               Discord

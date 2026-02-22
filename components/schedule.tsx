@@ -4,33 +4,48 @@ export function Schedule() {
       day: "Friday",
       date: "Jun 19",
       vibe: "Doors open, meet your team, start hacking",
-      moments: ["Check-in & opening ceremony", "Team formation", "Dinner", "Hacking begins"],
+      moments: [
+        "Check-in & opening ceremony",
+        "Team formation",
+        "Dinner",
+        "Hacking begins",
+      ],
     },
     {
       day: "Saturday",
       date: "Jun 20",
       vibe: "Full day of building and workshops",
-      moments: ["Workshops all day", "All meals covered", "Mentor office hours", "Late-night hacking"],
+      moments: [
+        "Workshops all day",
+        "All meals covered",
+        "Mentor office hours",
+        "Late-night hacking",
+      ],
     },
     {
       day: "Sunday",
       date: "Jun 21",
       vibe: "Ship it, demo it, celebrate",
-      moments: ["Final submissions", "Project expo", "Judging & awards", "Closing ceremony"],
+      moments: [
+        "Final submissions",
+        "Project expo",
+        "Judging & awards",
+        "Closing ceremony",
+      ],
     },
-  ]
+  ];
 
   return (
     <section id="schedule" className="relative py-20 md:py-28 bg-[#1a1a1a]">
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-10">
-          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/20 mb-3">
+          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/40 mb-3">
             The weekend
           </p>
           <h2 className="font-sans text-2xl md:text-4xl font-black tracking-tight text-white mb-2">
             Schedule
           </h2>
-          <p className="font-mono text-xs text-white/25">
+          <p className="font-mono text-xs text-white/50">
             Rough plan -- we{"'"}ll lock in times closer to the event.
           </p>
         </div>
@@ -43,8 +58,8 @@ export function Schedule() {
                 i === 0
                   ? "bg-[#6B9BD2]"
                   : i === 1
-                  ? "bg-[#2a2a2a]"
-                  : "bg-[#F0EDE6]"
+                    ? "bg-[#2a2a2a]"
+                    : "bg-[#F0EDE6]"
               }`}
             >
               <div>
@@ -58,7 +73,7 @@ export function Schedule() {
                   </span>
                   <span
                     className={`font-mono text-[10px] tracking-wider ${
-                      i === 2 ? "text-[#1a1a1a]/30" : "text-white/30"
+                      i === 2 ? "text-[#1a1a1a]/50" : "text-white/50"
                     }`}
                   >
                     {d.date}
@@ -66,7 +81,7 @@ export function Schedule() {
                 </div>
                 <p
                   className={`font-mono text-[11px] tracking-wide mt-1.5 ${
-                    i === 2 ? "text-[#1a1a1a]/35" : "text-white/30"
+                    i === 2 ? "text-[#1a1a1a]/55" : "text-white/50"
                   }`}
                 >
                   {d.vibe}
@@ -78,12 +93,12 @@ export function Schedule() {
                   <div key={m} className="flex items-center gap-2.5">
                     <div
                       className={`w-1 h-1 rounded-full flex-shrink-0 ${
-                        i === 2 ? "bg-[#1a1a1a]/15" : "bg-white/20"
+                        i === 2 ? "bg-[#1a1a1a]/30" : "bg-white/35"
                       }`}
                     />
                     <span
                       className={`font-sans text-[13px] ${
-                        i === 2 ? "text-[#1a1a1a]/50" : "text-white/45"
+                        i === 2 ? "text-[#1a1a1a]/65" : "text-white/65"
                       }`}
                     >
                       {m}
@@ -96,5 +111,5 @@ export function Schedule() {
         </div>
       </div>
     </section>
-  )
+  );
 }

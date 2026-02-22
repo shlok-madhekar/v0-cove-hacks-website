@@ -301,19 +301,19 @@ export function Prospectus() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
               <a
-                href="mailto:covehacks@gmail.com"
+                href="mailto:team@covehacks.dev"
                 className="group flex items-center gap-3 font-mono text-sm bg-black/20 hover:bg-black/30 px-8 py-5 rounded-2xl transition-all active:scale-[0.98] backdrop-blur-sm border border-white/10 hover:border-white/30 font-bold"
               >
                 <Mail className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
-                <span>covehacks@gmail.com</span>
+                <span>team@covehacks.dev</span>
                 <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
               </a>
               <a
-                href="https://covehacks.org"
+                href="https://covehacks.dev"
                 className="group flex items-center gap-3 font-mono text-sm bg-white/20 hover:bg-white/30 px-8 py-5 rounded-2xl transition-all active:scale-[0.98] backdrop-blur-sm border border-white/10 hover:border-white/30 font-bold"
               >
                 <Globe className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
-                <span>covehacks.org</span>
+                <span>covehacks.dev</span>
               </a>
             </div>
           </div>

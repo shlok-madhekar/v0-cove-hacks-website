@@ -600,7 +600,7 @@ export const ProspectusDocument = () => (
               <Text
                 style={{ color: COLORS.primary, fontSize: 12, fontWeight: 700 }}
               >
-                covehacks@gmail.com
+                team@covehacks.dev
               </Text>
             </View>
             <View
@@ -616,7 +616,7 @@ export const ProspectusDocument = () => (
               <Text
                 style={{ color: COLORS.text, fontSize: 12, fontWeight: 700 }}
               >
-                covehacks.org
+                covehacks.dev
               </Text>
             </View>
           </View>

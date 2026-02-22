@@ -80,22 +80,39 @@ function SponsorCard({
   );
 }
 
+const SKELETON_COPY = {
+  partners: ["Become a partner", "Your company here", "Let's talk"],
+  gold: ["Sponsor us", "Open spot", "You?"],
+  silver: ["+", "+", "+", "+"],
+  bronze: ["+", "+", "+", "+", "+", "+"],
+  inkind: ["+", "+", "+", "+", "+", "+"],
+};
+
 function SkeletonCard({
   height,
   rounded,
+  tier,
+  index,
 }: {
   height: string;
   rounded: string;
+  tier: keyof typeof SKELETON_COPY;
+  index: number;
 }) {
+  const copy = SKELETON_COPY[tier][index % SKELETON_COPY[tier].length];
+  const isSmall = tier === "bronze" || tier === "inkind" || tier === "silver";
+
   return (
-    <div
-      className={`border border-dashed border-[#1a1a1a]/20 bg-[#1a1a1a]/[0.03] ${rounded} ${height} flex items-center justify-center`}
-      aria-hidden="true"
+    <a
+      href="mailto:team@covehacks.dev?subject=Sponsoring%20Cove%20Hacks"
+      className={`group border border-dashed border-[#1a1a1a]/15 bg-[#1a1a1a]/[0.02] ${rounded} ${height} flex items-center justify-center transition-all duration-300 hover:border-[#6B9BD2]/30 hover:bg-[#6B9BD2]/[0.04] cursor-pointer`}
     >
-      <span className="font-mono text-[10px] tracking-wider text-[#1a1a1a]/30 select-none">
-        Your Logo
+      <span
+        className={`${isSmall ? "font-sans text-lg text-[#1a1a1a]/20" : "font-sans text-[12px] text-[#1a1a1a]/30"} group-hover:text-[#6B9BD2]/60 transition-colors`}
+      >
+        {copy}
       </span>
-    </div>
+    </a>
   );
 }
 
@@ -113,13 +130,13 @@ export function Sponsors() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
           <div>
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/25 mb-3">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/45 mb-3">
               Sponsors
             </p>
             <h2 className="font-sans text-2xl md:text-4xl font-black tracking-tight text-[#1a1a1a] mb-2">
               Our backers
             </h2>
-            <p className="font-sans text-sm text-[#1a1a1a]/35 max-w-md">
+            <p className="font-sans text-sm text-[#1a1a1a]/55 max-w-md">
               Cove Hacks runs on the support of companies and orgs that want to
               invest in the next generation.
             </p>
@@ -132,10 +149,10 @@ export function Sponsors() {
               View Prospectus
             </button>
             <a
-              href="mailto:covehacks@gmail.com"
-              className="font-mono text-[11px] text-[#1a1a1a]/35 border border-[#1a1a1a]/10 px-5 py-2.5 rounded-full hover:border-[#1a1a1a]/20 hover:text-[#1a1a1a]/55 transition-all text-center whitespace-nowrap"
+              href="mailto:team@covehacks.dev"
+              className="font-mono text-[11px] text-[#1a1a1a]/55 border border-[#1a1a1a]/15 px-5 py-2.5 rounded-full hover:border-[#1a1a1a]/25 hover:text-[#1a1a1a]/70 transition-all text-center whitespace-nowrap"
             >
-              covehacks@gmail.com
+              team@covehacks.dev
             </a>
           </div>
         </div>
@@ -143,7 +160,7 @@ export function Sponsors() {
         {/* ── Partners ── */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-3">
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/30">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/50">
               Partners
             </p>
             <div className="flex-1 h-px bg-gradient-to-r from-[#1a1a1a]/10 to-transparent" />
@@ -157,6 +174,8 @@ export function Sponsors() {
                 key={`pt-${i}`}
                 height="h-[160px]"
                 rounded="rounded-2xl"
+                tier="partners"
+                index={i}
               />
             ))}
           </div>
@@ -165,7 +184,7 @@ export function Sponsors() {
         {/* ── Gold ── */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-3">
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#c9a227]/60">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#c9a227]/70">
               Gold
             </p>
             <div className="flex-1 h-px bg-gradient-to-r from-[#c9a227]/15 to-transparent" />
@@ -179,6 +198,8 @@ export function Sponsors() {
                 key={`g-${i}`}
                 height="h-[110px]"
                 rounded="rounded-xl"
+                tier="gold"
+                index={i}
               />
             ))}
           </div>
@@ -187,7 +208,7 @@ export function Sponsors() {
         {/* ── Silver ── */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-3">
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/30">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/50">
               Silver
             </p>
             <div className="flex-1 h-px bg-gradient-to-r from-[#1a1a1a]/10 to-transparent" />
@@ -201,6 +222,8 @@ export function Sponsors() {
                 key={`s-${i}`}
                 height="h-[76px]"
                 rounded="rounded-xl"
+                tier="silver"
+                index={i}
               />
             ))}
           </div>
@@ -209,7 +232,7 @@ export function Sponsors() {
         {/* ── Bronze ── */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-3">
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/30">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/50">
               Bronze
             </p>
             <div className="flex-1 h-px bg-gradient-to-r from-[#1a1a1a]/10 to-transparent" />
@@ -223,6 +246,8 @@ export function Sponsors() {
                 key={`b-${i}`}
                 height="h-[52px]"
                 rounded="rounded-lg"
+                tier="bronze"
+                index={i}
               />
             ))}
           </div>
@@ -231,12 +256,12 @@ export function Sponsors() {
         {/* ── In-Kind ── */}
         <div>
           <div className="flex items-center gap-3 mb-3">
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/30">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#1a1a1a]/50">
               In-Kind
             </p>
             <div className="flex-1 h-px bg-gradient-to-r from-[#1a1a1a]/10 to-transparent" />
           </div>
-          <p className="font-sans text-[11px] text-[#1a1a1a]/35 mb-3">
+          <p className="font-sans text-[11px] text-[#1a1a1a]/55 mb-3">
             Products, credits, and services that make Cove Hacks possible.
           </p>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
@@ -248,6 +273,8 @@ export function Sponsors() {
                 key={`ik-${i}`}
                 height="h-[44px]"
                 rounded="rounded-lg"
+                tier="inkind"
+                index={i}
               />
             ))}
           </div>
