@@ -3,7 +3,7 @@ import { TeamPage } from "@/components/team-page";
 import { Footer } from "@/components/footer";
 
 export const metadata = {
-  title: "Team | Cove Hacks",
+  title: "Team",
   description:
     "Meet the crew of high schoolers organizing the largest high school hackathon ever.",
 };
