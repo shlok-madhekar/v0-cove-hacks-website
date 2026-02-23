@@ -27,12 +27,11 @@ export function About() {
 
           <div className="bg-[#1a1a1a] rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[200px]">
             <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/50">
-              What you get
+              What you'll get for 100%
             </p>
             <p className="font-sans text-sm text-white/70 leading-relaxed">
-              All meals covered, workshops from people who actually know their
-              stuff, mentors around the clock, and $30K+ in prizes. No
-              experience needed.
+              Meals and snacks provided around the clock (Breakfast, Lunch, Dinner), workshops from people who are experts in their field, mentors available around the clock, and more than $30K in prizes. No
+              experience needed, making it completely begginer friendly.
             </p>
           </div>
         </div>
@@ -45,14 +44,14 @@ export function About() {
                 Hardware
               </p>
               <p className="font-sans text-sm text-[#1a1a1a]/65 leading-relaxed max-w-lg">
-                We{"'"}re putting together a hardware lab -- soldering stations,
-                microcontrollers, sensors, the works. Still finalizing the
-                details, but if you want to build something physical, you{"'"}ll
-                have what you need.
+                We{"'"}re providng a hardware lab. It's going to be loaded with soldering stations,
+                microcontrollers, sensors, the works. We{"'"}re still finalizing the
+                details, but if you want to build something physical, we{"'"}ll
+                have whatever you possibly need.
               </p>
             </div>
             <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/40 whitespace-nowrap sm:mt-0.5">
-              More details soon
+              More details coming soon
             </p>
           </div>
         </div>
@@ -63,7 +62,7 @@ export function About() {
             { n: "400", l: "Hackers" },
             { n: "48", l: "Hours" },
             { n: "$30K+", l: "In prizes" },
-            { n: "100%", l: "Free" },
+            { n: "1000%", l: "Free" },
           ].map((s) => (
             <div
               key={s.l}

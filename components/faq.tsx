@@ -10,31 +10,31 @@ import {
 const faqs = [
   {
     q: "Who can come?",
-    a: "Any high school student. Doesn't matter if you've never written a line of code. Designers, tinkerers, people who are just curious -- all good.",
+    a: "Any high school student or younger. Doesn't matter if you've never written a line of code. Everyone from designers, tinkerers, coders, and people who are just curious should come.",
   },
   {
     q: "Do I need a team?",
-    a: "Nah. You can come solo and find people at team formation on Friday. Teams are 1-4 people.",
+    a: "Nope. You can come solo and find people at team formation on Friday. Teams are 1-4 people.",
   },
   {
     q: "Is it actually free?",
-    a: "Yeah. Food, hardware, swag, everything. We don't want money to be the reason someone doesn't show up.",
+    a: "Yeah, it's a 1000% free. We give you free stuff to come! Food, hardware, swag, everything. We don't want money to be the reason someone doesn't show up.",
   },
   {
     q: "What about hardware stuff?",
-    a: "We're working on a hardware lab with microcontrollers, sensors, and tools. You can also bring your own. More details coming soon.",
+    a: "We're working on a hardware lab with microcontrollers, sensors, and tools. You are also welcome to bring your own. More details coming soon.",
   },
   {
     q: "What should I bring?",
-    a: "Laptop, charger, water bottle. Sleeping bag if you want to nap. We handle the rest.",
+    a: "Laptop, charger, water bottle. Sleeping bag if you want to sleep or nap. And we provide the rest. From food to wifi to power, the essentials.",
   },
   {
     q: "Do I need to know how to code?",
-    a: "Nope. We'll have beginner workshops and mentors. There's also plenty of non-coding roles -- design, hardware, pitching.",
+    a: "Nope. We'll have beginner workshops and mentors. There's also plenty of roles coding-free. Design, hardware, marketing.",
   },
   {
     q: "Can I start building before the event?",
-    a: "You can brainstorm and plan, but all building happens during the 48 hours. Open-source stuff and public APIs are fair game.",
+    a: "You can brainstorm and plan, but all building should happen during the 48 hours. Any Open-source stuff and public APIs are fair game.",
   },
 ];
 
