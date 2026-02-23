@@ -3,15 +3,15 @@ export function CTA() {
     <section id="register" className="relative py-24 md:py-32 bg-[#6B9BD2]">
       <div className="text-center px-6 max-w-xl mx-auto">
         <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/50 mb-6">
-          Applications open
+          Sign-ups open now!
         </p>
 
         <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-[0.95] mb-4 text-balance">
-          Come build something.
+          Come build something amazing.
         </h2>
 
         <p className="font-mono text-xs sm:text-sm text-white/60 mb-10">
-          In person &middot; June 26&ndash;28 &middot; Bay Area &middot; 100%
+          In person &middot; June 26&ndash;28 &middot; Bay Area &middot; 1000%
           free
         </p>
 
