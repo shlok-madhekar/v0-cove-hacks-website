@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Cove Hacks is the world's largest in-person high school hackathon — 400 hackers, 48 hours, hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA. June 19–21, 2026. 100% free.",
+    "Cove Hacks is the world's largest in-person high school hackathon — 400 hackers, 48 hours, hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA. June 26–28, 2026. 100% free.",
 
   keywords: [
     "hackathon",
@@ -68,13 +68,13 @@ export const metadata: Metadata = {
     siteName: "Cove Hacks",
     title: "Cove Hacks | The World's Largest IRL High School Hackathon",
     description:
-      "400 hackers. 48 hours. In-person hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA — June 19–21, 2026. 100% free.",
+      "400 hackers. 48 hours. In-person hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA — June 26–28, 2026. 100% free.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cove Hacks — The World's Largest In-Person High School Hackathon. 400 hackers, 48 hours, $30K+ in prizes. June 19–21, 2026. Bay Area, CA.",
+        alt: "Cove Hacks — The World's Largest In-Person High School Hackathon. 400 hackers, 48 hours, $30K+ in prizes. June 26–28, 2026. Bay Area, CA.",
         type: "image/png",
       },
     ],
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cove Hacks | The World's Largest IRL High School Hackathon",
     description:
-      "400 hackers. 48 hours. In-person hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area — June 19–21, 2026. Completely free.",
+      "400 hackers. 48 hours. In-person hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area — June 26–28, 2026. Completely free.",
     creator: "@covehacks",
     site: "@covehacks",
     images: [
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cove Hacks — The World's Largest In-Person High School Hackathon. 400 hackers, 48 hours, $30K+ in prizes. June 19–21, 2026. Bay Area, CA.",
+        alt: "Cove Hacks — The World's Largest In-Person High School Hackathon. 400 hackers, 48 hours, $30K+ in prizes. June 26–28, 2026. Bay Area, CA.",
       },
     ],
   },

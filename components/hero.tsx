@@ -23,7 +23,7 @@ export function Hero() {
   useEffect(() => setMounted(true), []);
 
   const { days, hours, mins, secs } = useCountdown(
-    new Date("2026-06-19T09:00:00-07:00"),
+    new Date("2026-06-26T09:00:00-07:00"),
   );
 
   return (
@@ -48,7 +48,7 @@ export function Hero() {
           </h1>
 
           <p className="font-mono text-xs sm:text-sm text-white/60 mt-5 tracking-wide">
-            June 19&ndash;21, 2026 &middot; Bay Area, CA
+            June 26&ndash;28, 2026 &middot; Bay Area, CA
           </p>
         </div>
 

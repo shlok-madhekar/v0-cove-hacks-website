@@ -153,7 +153,7 @@ const markup = {
                 children: [
                   {
                     type: "span",
-                    props: { children: "June 19\u201321, 2026" },
+                    props: { children: "June 26\u201328, 2026" },
                   },
                   {
                     type: "span",

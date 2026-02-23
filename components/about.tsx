@@ -17,7 +17,7 @@ export function About() {
             </p>
             <div>
               <p className="font-sans text-xl font-bold text-white leading-tight">
-                June 19&ndash;21, 2026
+                June 26&ndash;28, 2026
               </p>
               <p className="font-mono text-xs text-white/70 mt-1">
                 Bay Area, CA
