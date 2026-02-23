@@ -38,7 +38,7 @@ export function Hero() {
           }`}
         >
           <p className="font-mono text-[10px] sm:text-xs tracking-[0.25em] uppercase text-white/60 mb-5">
-            The world{"'"}s largest high school hackathon
+            The world{"'"}s largest IRL high school hackathon
           </p>
 
           <h1 className="font-sans text-[clamp(3rem,13vw,11rem)] font-black tracking-[-0.06em] text-white leading-[0.85] select-none">
@@ -97,10 +97,10 @@ export function Hero() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
           <div>
             <p className="font-mono text-[10px] sm:text-[11px] tracking-[0.15em] text-white/55 uppercase">
-              400 hackers &middot; 48 hours &middot; $30K+ in prizes
+              In-person &middot; hardware + software &middot; 400 hackers
             </p>
             <p className="font-mono text-[10px] sm:text-xs text-white/45 mt-1">
-              hardware + software &middot; all skill levels
+              48 hours &middot; $30K+ in prizes &middot; all skill levels
             </p>
           </div>
 

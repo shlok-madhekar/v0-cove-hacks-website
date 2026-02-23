@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 export const metadata = {
   title: "Team",
   description:
-    "Meet the crew of high schoolers organizing the largest high school hackathon ever.",
+    "Meet the crew of high schoolers organizing the largest in-person high school hardware hackathon ever.",
 };
 
 export default function Team() {

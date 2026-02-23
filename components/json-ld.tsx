@@ -4,7 +4,7 @@ export function JsonLd() {
     "@type": "Event",
     name: "Cove Hacks 2026",
     description:
-      "The world's largest high school hackathon. 400 hackers, 48 hours, hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA.",
+      "The world's largest in-person high school hackathon. 400 hackers, 48 hours, hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA.",
     startDate: "2026-06-19T09:00:00-07:00",
     endDate: "2026-06-21T17:00:00-07:00",
     eventStatus: "https://schema.org/EventScheduled",
@@ -43,6 +43,7 @@ export function JsonLd() {
     keywords: [
       "hackathon",
       "high school hackathon",
+      "in-person hackathon",
       "Bay Area hackathon",
       "coding competition",
       "hardware hackathon",
@@ -70,7 +71,7 @@ export function JsonLd() {
     name: "Cove Hacks",
     url: "https://covehacks.dev",
     description:
-      "The world's largest high school hackathon. 400 hackers, 48 hours, Bay Area. June 19–21, 2026.",
+      "The world's largest in-person high school hackathon. 400 hackers, 48 hours, hardware + software, Bay Area. June 19–21, 2026.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://covehacks.dev",

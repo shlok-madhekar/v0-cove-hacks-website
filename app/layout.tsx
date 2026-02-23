@@ -17,12 +17,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://covehacks.dev"),
 
   title: {
-    default: "Cove Hacks | The World's Largest High School Hackathon",
+    default: "Cove Hacks | The World's Largest IRL High School Hackathon",
     template: "%s | Cove Hacks",
   },
 
   description:
-    "Cove Hacks is the world's largest high school hackathon — 400 hackers, 48 hours, hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA. June 19–21, 2026. 100% free.",
+    "Cove Hacks is the world's largest in-person high school hackathon — 400 hackers, 48 hours, hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA. June 19–21, 2026. 100% free.",
 
   keywords: [
     "hackathon",
@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     "teen hackathon",
     "coding competition",
     "hardware hackathon",
+    "in-person hackathon",
     "Bay Area",
     "California hackathon",
     "free hackathon",
@@ -65,15 +66,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://covehacks.dev",
     siteName: "Cove Hacks",
-    title: "Cove Hacks | The World's Largest High School Hackathon",
+    title: "Cove Hacks | The World's Largest IRL High School Hackathon",
     description:
-      "400 hackers. 48 hours. Hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA — June 19–21, 2026. 100% free.",
+      "400 hackers. 48 hours. In-person hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area, CA — June 19–21, 2026. 100% free.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cove Hacks — The World's Largest High School Hackathon. 400 hackers, 48 hours, $30K+ in prizes. June 19–21, 2026. Bay Area, CA.",
+        alt: "Cove Hacks — The World's Largest In-Person High School Hackathon. 400 hackers, 48 hours, $30K+ in prizes. June 19–21, 2026. Bay Area, CA.",
         type: "image/png",
       },
     ],
@@ -81,9 +82,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Cove Hacks | The World's Largest High School Hackathon",
+    title: "Cove Hacks | The World's Largest IRL High School Hackathon",
     description:
-      "400 hackers. 48 hours. Hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area — June 19–21, 2026. Completely free.",
+      "400 hackers. 48 hours. In-person hardware labs, workshops, mentors, and $30K+ in prizes. Bay Area — June 19–21, 2026. Completely free.",
     creator: "@covehacks",
     site: "@covehacks",
     images: [
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Cove Hacks — The World's Largest High School Hackathon. 400 hackers, 48 hours, $30K+ in prizes. June 19–21, 2026. Bay Area, CA.",
+        alt: "Cove Hacks — The World's Largest In-Person High School Hackathon. 400 hackers, 48 hours, $30K+ in prizes. June 19–21, 2026. Bay Area, CA.",
       },
     ],
   },

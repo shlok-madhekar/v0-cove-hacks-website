@@ -11,7 +11,8 @@ export function CTA() {
         </h2>
 
         <p className="font-mono text-xs sm:text-sm text-white/60 mb-10">
-          June 19&ndash;21 &middot; Bay Area &middot; 100% free
+          In person &middot; June 19&ndash;21 &middot; Bay Area &middot; 100%
+          free
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

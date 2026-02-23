@@ -18,7 +18,7 @@ export function Footer() {
               </span>
             </div>
             <p className="font-sans text-xs text-white/45 max-w-xs leading-relaxed">
-              The largest high school hackathon ever.
+              The largest in-person high school hackathon ever.
               <br />
               June 19&ndash;21, 2026 &middot; Bay Area, CA
             </p>
