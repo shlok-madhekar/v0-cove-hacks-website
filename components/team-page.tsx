@@ -36,9 +36,9 @@ const EXEC_TEAM: Team = {
       link: "https://www.linkedin.com/in/neel-patil-a04652354",
     },
     {
-      name: "Apply Now",
+      name: "Gia Vimal",
       role: "Head of Marketing",
-      link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+      link: "https://www.linkedin.com/in/giavimal/",
     },
     {
       name: "Dhiaan Dave",
@@ -65,14 +65,14 @@ const SUB_TEAMS: Team[] = [
         link: "https://www.linkedin.com/in/anish-dhamija-5b93712b3/",
       },
       {
-        name: "Apply Now",
+        name: "Varshith Gude",
         role: "Outreach",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+        link: "https://varshithgude.me",
       },
       {
-        name: "Apply Now",
+        name: "Pranauv Muthuraman",
         role: "Outreach",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+        link: "https://www.linkedin.com/in/rouler4wd?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       },
       {
         name: "Apply Now",
@@ -117,9 +117,9 @@ const SUB_TEAMS: Team[] = [
     description: "Getting the word out and making sure people show up.",
     members: [
       {
-        name: "Apply Now",
+        name: "Gia Vimal",
         role: "Lead",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+        link: "https://www.linkedin.com/in/giavimal/",
       },
       {
         name: "Apply Now",
