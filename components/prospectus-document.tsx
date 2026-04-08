@@ -231,12 +231,12 @@ export const ProspectusDocument = () => (
         <View style={{ marginBottom: 30 }}>
           <Text style={styles.body}>
             Cove Hacks is bringing together 400 of the brightest young
-            engineers, designers, and builders for 48 hours of creation.
+            engineers, leaders, designers, and builders for 48 magical hours of creation.
           </Text>
           <Text style={styles.body}>
             We believe in the power of hands-on building. By providing students
             with hardware labs, mentorship, and resources, we're empowering the
-            next generation of innovators to turn their crazy ideas into
+            next generation of innovators and allowing them to turn their wildest ideas into
             reality.
           </Text>
         </View>

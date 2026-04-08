@@ -27,7 +27,7 @@ export default function NotFound() {
           </h1>
 
           <p className="font-mono text-xs sm:text-sm text-white/60 mb-10">
-            This page doesn{"'"}t exist.
+            Sorry, this page doesn{"'"}t exist or has been moved.
           </p>
 
           <a
