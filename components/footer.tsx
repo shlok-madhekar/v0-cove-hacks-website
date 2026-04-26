@@ -20,7 +20,7 @@ export function Footer() {
             <p className="font-sans text-xs text-white/45 max-w-xs leading-relaxed">
               The largest in-person high school hackathon ever.
               <br />
-              July 17&ndash;19, 2026 &middot; Bay Area, CA
+              July 24&ndash;26, 2026 &middot; Bay Area, CA
             </p>
           </div>
 

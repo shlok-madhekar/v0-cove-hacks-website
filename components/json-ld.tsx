@@ -71,7 +71,7 @@ export function JsonLd() {
     name: "Cove Hacks",
     url: "https://covehacks.dev",
     description:
-      "The world's largest in-person high school hackathon. 400 hackers, 48 hours, hardware + software, Bay Area. July 17–19, 2026.",
+      "The world's largest in-person high school hackathon. 400 hackers, 48 hours, hardware + software, Bay Area. July 24–26, 2026.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://covehacks.dev",

@@ -2,7 +2,7 @@ export function Schedule() {
   const days = [
     {
       day: "Friday",
-      date: "Jun 26",
+      date: "Jul 24",
       vibe: "Doors open, meet your team, start hacking",
       moments: [
         "Check-in & opening ceremony",
@@ -13,7 +13,7 @@ export function Schedule() {
     },
     {
       day: "Saturday",
-      date: "Jun 27",
+      date: "Jul 25",
       vibe: "Full day of building and workshops",
       moments: [
         "Workshops all day",
@@ -24,7 +24,7 @@ export function Schedule() {
     },
     {
       day: "Sunday",
-      date: "Jun 28",
+      date: "Jul 26",
       vibe: "Ship it, demo it, celebrate",
       moments: [
         "Final submissions",
