@@ -18,6 +18,12 @@ const REAL_SPONSORS: RealSponsor[] = [
     url: "https://crackd.it/cove",
     tier: "gold",
   },
+  {
+    name: "SendCutSend",
+    logo: "/sponsor-logos/gold/sendcutsend.svg",
+    url: "https://sendcutsend.com",
+    tier: "gold",
+  },
 
   {
     name: "HackPilot",
