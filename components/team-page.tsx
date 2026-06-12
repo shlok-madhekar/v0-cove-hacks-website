@@ -70,9 +70,9 @@ const SUB_TEAMS: Team[] = [
         link: "https://www.linkedin.com/in/rouler4wd?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       },
       {
-        name: "Apply Now",
+        name: "Nandan Pericherla",
         role: "Outreach",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+        link: "https://www.linkedin.com/in/nandanpericherla/",
       },
       {
         name: "Apply Now",
