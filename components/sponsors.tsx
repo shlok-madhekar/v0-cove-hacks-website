@@ -31,6 +31,12 @@ const REAL_SPONSORS: RealSponsor[] = [
     url: "https://hackpilot.io",
     tier: "inkind",
   },
+  {
+    name: "gen.xyz",
+    logo: "/sponsor-logos/in-kind/gen-xyz.png",
+    url: "https://gen.xyz/",
+    tier: "inkind",
+  },
 ];
 
 const GOLD_SPONSORS = REAL_SPONSORS.filter((s) => s.tier === "gold");
