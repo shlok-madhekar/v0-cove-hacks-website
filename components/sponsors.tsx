@@ -24,6 +24,12 @@ const REAL_SPONSORS: RealSponsor[] = [
     url: "https://sendcutsend.com",
     tier: "gold",
   },
+  {
+    name: "iFixit",
+    logo: "/sponsor-logos/gold/ifixit.png",
+    url: "https://www.ifixit.com/",
+    tier: "gold",
+  },
 
   {
     name: "HackPilot",
@@ -35,6 +41,12 @@ const REAL_SPONSORS: RealSponsor[] = [
     name: "gen.xyz",
     logo: "/sponsor-logos/in-kind/gen-xyz.png",
     url: "https://gen.xyz/",
+    tier: "inkind",
+  },
+  {
+    name: "CodeCrafters",
+    logo: "/sponsor-logos/in-kind/codecrafters.png",
+    url: "https://codecrafters.io/",
     tier: "inkind",
   },
 ];
