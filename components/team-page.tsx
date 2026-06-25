@@ -80,9 +80,9 @@ const SUB_TEAMS: Team[] = [
         link: "https://www.linkedin.com/in/samanyu-goyal/",
       },
       {
-        name: "Apply Now",
+        name: "Arnav Gupta",
         role: "Outreach",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+        link: "https://www.linkedin.com/in/arnav-gupta-89bb78344/",
       },
       {
         name: "Apply Now",

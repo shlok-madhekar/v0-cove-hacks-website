@@ -49,6 +49,18 @@ const REAL_SPONSORS: RealSponsor[] = [
     url: "https://codecrafters.io/",
     tier: "inkind",
   },
+  {
+    name: "AoPS",
+    logo: "/sponsor-logos/in-kind/aops.png",
+    url: "https://artofproblemsolving.com/company",
+    tier: "inkind",
+  },
+  {
+    name: "MeDo",
+    logo: "/sponsor-logos/in-kind/medo.png",
+    url: "https://medo.dev/",
+    tier: "inkind",
+  },
 ];
 
 const GOLD_SPONSORS = REAL_SPONSORS.filter((s) => s.tier === "gold");
