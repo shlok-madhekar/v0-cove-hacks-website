@@ -61,6 +61,12 @@ const REAL_SPONSORS: RealSponsor[] = [
     url: "https://medo.dev/",
     tier: "inkind",
   },
+  {
+    name: "YRI",
+    logo: "/sponsor-logos/in-kind/yri.png",
+    url: "https://www.yriscience.com/",
+    tier: "inkind",
+  },
 ];
 
 const GOLD_SPONSORS = REAL_SPONSORS.filter((s) => s.tier === "gold");
