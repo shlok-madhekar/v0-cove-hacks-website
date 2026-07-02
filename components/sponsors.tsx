@@ -319,18 +319,27 @@ export function Sponsors() {
           <p className="font-sans text-[11px] text-[#1a1a1a]/55 mb-3">
             Products, credits, and services that make Cove Hacks possible.
           </p>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+          <div className="flex flex-wrap justify-center gap-2.5">
             {INKIND_SPONSORS.map((s) => (
-              <SponsorCard key={s.name} sponsor={s} height="h-[44px]" />
+              <div
+                key={s.name}
+                className="w-[calc(50%-0.3125rem)] sm:w-[calc(33.333%-0.417rem)] md:w-40"
+              >
+                <SponsorCard sponsor={s} height="h-[64px]" />
+              </div>
             ))}
             {Array.from({ length: inkindSkeletons }).map((_, i) => (
-              <SkeletonCard
+              <div
                 key={`ik-${i}`}
-                height="h-[44px]"
-                rounded="rounded-lg"
-                tier="inkind"
-                index={i}
-              />
+                className="w-[calc(50%-0.3125rem)] sm:w-[calc(33.333%-0.417rem)] md:w-40"
+              >
+                <SkeletonCard
+                  height="h-[64px]"
+                  rounded="rounded-xl"
+                  tier="inkind"
+                  index={i}
+                />
+              </div>
             ))}
           </div>
         </div>
