@@ -13,7 +13,7 @@ const HEIGHT = 630;
 const stats = [
   { value: "400", label: "HACKERS" },
   { value: "48", label: "HOURS" },
-  { value: "$30K+", label: "IN PRIZES" },
+  { value: "$35K", label: "IN PRIZES" },
   { value: "100%", label: "FREE" },
 ];
 

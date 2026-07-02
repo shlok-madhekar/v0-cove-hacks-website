@@ -31,7 +31,7 @@ export function About() {
             </p>
             <p className="font-sans text-sm text-white/70 leading-relaxed">
               All meals covered, workshops from people who actually know their
-              stuff, mentors around the clock, and $30K+ in prizes. No
+              stuff, mentors around the clock, and $35K in prizes. No
               experience needed.
             </p>
           </div>
@@ -62,7 +62,7 @@ export function About() {
           {[
             { n: "400", l: "Hackers" },
             { n: "48", l: "Hours" },
-            { n: "$30K+", l: "In prizes" },
+            { n: "$35K", l: "In prizes" },
             { n: "100%", l: "Free" },
           ].map((s) => (
             <div
