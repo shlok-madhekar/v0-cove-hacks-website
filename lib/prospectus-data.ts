@@ -5,7 +5,7 @@ export const PROSPECTUS_DATA = {
     { value: "400+", label: "Hackers", detail: "Top high school talent" },
     { value: "48h", label: "Hacking", detail: "Non-stop creation" },
     { value: "200+", label: "Projects", detail: "Innovative solutions" },
-    { value: "$35K", label: "Prizes", detail: "Hardware & grants" },
+    { value: "$65K", label: "Prizes", detail: "Hardware & grants" },
   ],
   whySponsor: [
     {

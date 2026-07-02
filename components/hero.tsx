@@ -100,7 +100,7 @@ export function Hero() {
               In-person &middot; hardware + software &middot; 400 hackers
             </p>
             <p className="font-mono text-[10px] sm:text-xs text-white/45 mt-1">
-              48 hours &middot; $35K in prizes &middot; all skill levels
+              48 hours &middot; $65K in prizes &middot; all skill levels
             </p>
           </div>
 
