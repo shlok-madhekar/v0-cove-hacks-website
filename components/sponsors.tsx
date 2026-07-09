@@ -73,6 +73,12 @@ const REAL_SPONSORS: RealSponsor[] = [
     url: "https://n8n.io/",
     tier: "inkind",
   },
+  {
+    name: "Render",
+    logo: "/sponsor-logos/in-kind/render.svg",
+    url: "https://render.com/",
+    tier: "inkind",
+  },
 ];
 
 const GOLD_SPONSORS = REAL_SPONSORS.filter((s) => s.tier === "gold");
@@ -85,7 +91,7 @@ const PLATINUM_SKELETON_COUNT = 3;
 const GOLD_TOTAL_SLOTS = 4;
 const SILVER_TOTAL_SLOTS = 4;
 const BRONZE_TOTAL_SLOTS = 6;
-const INKIND_TOTAL_SLOTS = 7;
+const INKIND_TOTAL_SLOTS = 8;
 
 const goldSkeletons = Math.max(0, GOLD_TOTAL_SLOTS - GOLD_SPONSORS.length);
 const silverSkeletons = Math.max(
@@ -108,9 +114,11 @@ const inkindSkeletons = Math.max(
 function SponsorCard({
   sponsor,
   height,
+  logoClassName = "w-[70%] h-[60%]",
 }: {
   sponsor: RealSponsor;
   height: string;
+  logoClassName?: string;
 }) {
   return (
     <a
@@ -122,7 +130,7 @@ function SponsorCard({
     >
       {/* subtle gold shimmer on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#fff9e6]/60 to-transparent pointer-events-none" />
-      <div className="relative w-[70%] h-[60%]">
+      <div className={`relative ${logoClassName}`}>
         <Image
           src={sponsor.logo}
           alt={sponsor.name}
@@ -325,7 +333,13 @@ export function Sponsors() {
                 key={s.name}
                 className="w-[calc(50%-0.3125rem)] sm:w-[calc(33.333%-0.417rem)] md:w-40"
               >
-                <SponsorCard sponsor={s} height="h-[64px]" />
+                <SponsorCard
+                  sponsor={s}
+                  height="h-[64px]"
+                  logoClassName={
+                    s.name === "Render" ? "w-[96%] h-[85%]" : "w-[70%] h-[60%]"
+                  }
+                />
               </div>
             ))}
             {Array.from({ length: inkindSkeletons }).map((_, i) => (
