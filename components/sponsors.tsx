@@ -337,7 +337,7 @@ export function Sponsors() {
                   sponsor={s}
                   height="h-[64px]"
                   logoClassName={
-                    s.name === "Render" ? "w-[96%] h-[85%]" : "w-[70%] h-[60%]"
+                    s.name === "Render" ? "w-[82%] h-[66%]" : "w-[70%] h-[60%]"
                   }
                 />
               </div>
