@@ -11,7 +11,7 @@ export function CTA() {
         </h2>
 
         <p className="font-mono text-xs sm:text-sm text-white/60 mb-10">
-          In person &middot; July 24&ndash;26 &middot; Bay Area &middot; 100%
+          In person &middot; Oct&ndash;Nov 2026 &middot; Bay Area &middot; 100%
           free
         </p>
 

@@ -2,29 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-function useCountdown(target: Date) {
-  const [diff, setDiff] = useState(0);
-  useEffect(() => {
-    const tick = () => setDiff(Math.max(0, target.getTime() - Date.now()));
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, [target]);
-  return {
-    days: Math.floor(diff / 86400000),
-    hours: Math.floor((diff % 86400000) / 3600000),
-    mins: Math.floor((diff % 3600000) / 60000),
-    secs: Math.floor((diff % 60000) / 1000),
-  };
-}
-
 export function Hero() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-
-  const { days, hours, mins, secs } = useCountdown(
-    new Date("2026-07-17T09:00:00-07:00"),
-  );
 
   return (
     <section
@@ -48,49 +28,14 @@ export function Hero() {
           </h1>
 
           <p className="font-mono text-xs sm:text-sm text-white/60 mt-5 tracking-wide">
-            July 24&ndash;26, 2026 &middot; Bay Area, CA
+            October&ndash;November 2026 &middot; Bay Area, CA
           </p>
-        </div>
-
-        {/* Countdown */}
-        <div
-          className={`mt-10 sm:mt-14 transition-all duration-700 delay-200 ease-out ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          <div className="flex items-baseline gap-2 sm:gap-4">
-            {[
-              { val: days, label: "d" },
-              { val: hours, label: "h" },
-              { val: mins, label: "m" },
-              { val: secs, label: "s" },
-            ].map((unit, i) => (
-              <div
-                key={unit.label}
-                className="flex items-baseline gap-2 sm:gap-4"
-              >
-                <div className="flex items-baseline gap-0.5">
-                  <span className="font-mono text-3xl sm:text-5xl md:text-6xl font-bold text-white tabular-nums leading-none">
-                    {String(unit.val).padStart(2, "0")}
-                  </span>
-                  <span className="font-mono text-[10px] sm:text-xs text-white/50">
-                    {unit.label}
-                  </span>
-                </div>
-                {i < 3 && (
-                  <span className="font-mono text-xl sm:text-3xl text-white/30 select-none">
-                    :
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
       {/* Bottom bar */}
       <div
-        className={`px-6 pb-6 transition-all duration-700 delay-400 ease-out ${
+        className={`px-6 pb-6 transition-all duration-700 delay-200 ease-out ${
           mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >

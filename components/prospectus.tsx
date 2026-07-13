@@ -64,7 +64,7 @@ export function Prospectus() {
             high school hackathon.
             <br />
             <span className="text-white font-medium mt-4 block">
-              July 24-26, 2026 &middot; San Francisco, CA
+              October&ndash;November 2026 &middot; San Francisco, CA
             </span>
           </p>
         </header>

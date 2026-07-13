@@ -2,7 +2,6 @@ export function Schedule() {
   const days = [
     {
       day: "Friday",
-      date: "Jul 24",
       vibe: "Doors open, meet your team, start hacking",
       moments: [
         "Check-in & opening ceremony",
@@ -13,7 +12,6 @@ export function Schedule() {
     },
     {
       day: "Saturday",
-      date: "Jul 25",
       vibe: "Full day of building and workshops",
       moments: [
         "Workshops all day",
@@ -24,7 +22,6 @@ export function Schedule() {
     },
     {
       day: "Sunday",
-      date: "Jul 26",
       vibe: "Ship it, demo it, celebrate",
       moments: [
         "Final submissions",
@@ -70,13 +67,6 @@ export function Schedule() {
                     }`}
                   >
                     {d.day}
-                  </span>
-                  <span
-                    className={`font-mono text-[10px] tracking-wider ${
-                      i === 2 ? "text-[#1a1a1a]/50" : "text-white/50"
-                    }`}
-                  >
-                    {d.date}
                   </span>
                 </div>
                 <p
