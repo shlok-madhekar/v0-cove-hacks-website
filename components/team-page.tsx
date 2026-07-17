@@ -122,11 +122,6 @@ const SUB_TEAMS: Team[] = [
         link: "https://www.linkedin.com/in/giavimal/",
       },
       {
-        name: "Shuvam Kumar Das",
-        role: "Content",
-        link: "#",
-      },
-      {
         name: "Apply Now",
         role: "Social Media",
         link: "https://forms.gle/J6DzSdhLEGn8G1up8",
@@ -169,9 +164,9 @@ const SUB_TEAMS: Team[] = [
         link: "https://www.linkedin.com/in/om-anand-khaunte",
       },
       {
-        name: "Apply Now",
+        name: "Jason How",
         role: "Volunteer Coord.",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
+        link: "#",
       },
       {
         name: "Apply Now",
@@ -189,11 +184,6 @@ const SUB_TEAMS: Team[] = [
         name: "Devin Liu",
         role: "Volunteer",
         link: "https://www.linkedin.com/in/devin-liu-6aa1b9325",
-      },
-      {
-        name: "Shreyan Mitra",
-        role: "Volunteer",
-        link: "https://www.linkedin.com/in/shreyan-m-8910172b7",
       },
       {
         name: "Apply Now",
