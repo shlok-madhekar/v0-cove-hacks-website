@@ -14,7 +14,7 @@ interface RealSponsor {
 const REAL_SPONSORS: RealSponsor[] = [
   {
     name: "Makeable",
-    logo: "/sponsor-logos/partners/makeable.svg",
+    logo: "/sponsor-logos/partners/makeable.png",
     url: "https://makeable.build/",
     tier: "platinum",
   },
