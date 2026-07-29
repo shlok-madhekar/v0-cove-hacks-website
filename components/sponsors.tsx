@@ -13,6 +13,12 @@ interface RealSponsor {
 
 const REAL_SPONSORS: RealSponsor[] = [
   {
+    name: "Makeable",
+    logo: "/sponsor-logos/partners/makeable.svg",
+    url: "https://makeable.build/",
+    tier: "platinum",
+  },
+  {
     name: "Crackd",
     logo: "/sponsor-logos/gold/crackd-color.webp",
     url: "https://crackd.it/cove",
@@ -236,7 +242,14 @@ export function Sponsors() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {PLATINUM_SPONSORS.map((s) => (
-              <SponsorCard key={s.name} sponsor={s} height="h-[160px]" />
+              <SponsorCard
+                key={s.name}
+                sponsor={s}
+                height="h-[160px]"
+                logoClassName={
+                  s.name === "Makeable" ? "w-[85%] h-[70%]" : "w-[70%] h-[60%]"
+                }
+              />
             ))}
             {Array.from({ length: platinumSkeletons }).map((_, i) => (
               <SkeletonCard
