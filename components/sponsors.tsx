@@ -79,6 +79,12 @@ const REAL_SPONSORS: RealSponsor[] = [
     url: "https://render.com/",
     tier: "inkind",
   },
+  {
+    name: "SEGGER",
+    logo: "/sponsor-logos/in-kind/segger.svg",
+    url: "https://www.segger.com/",
+    tier: "inkind",
+  },
 ];
 
 const GOLD_SPONSORS = REAL_SPONSORS.filter((s) => s.tier === "gold");
@@ -91,7 +97,7 @@ const PLATINUM_SKELETON_COUNT = 3;
 const GOLD_TOTAL_SLOTS = 4;
 const SILVER_TOTAL_SLOTS = 4;
 const BRONZE_TOTAL_SLOTS = 6;
-const INKIND_TOTAL_SLOTS = 8;
+const INKIND_TOTAL_SLOTS = 9;
 
 const goldSkeletons = Math.max(0, GOLD_TOTAL_SLOTS - GOLD_SPONSORS.length);
 const silverSkeletons = Math.max(
