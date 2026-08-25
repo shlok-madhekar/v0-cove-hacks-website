@@ -85,6 +85,11 @@ const SUB_TEAMS: Team[] = [
         link: "https://www.linkedin.com/in/arnav-gupta-89bb78344/",
       },
       {
+        name: "Chunhwee Choi",
+        role: "Outreach",
+        link: "#",
+      },
+      {
         name: "Apply Now",
         role: "Outreach",
         link: "https://forms.gle/J6DzSdhLEGn8G1up8",
@@ -164,9 +169,14 @@ const SUB_TEAMS: Team[] = [
         link: "https://www.linkedin.com/in/om-anand-khaunte",
       },
       {
+        name: "Ryan Bahadori",
+        role: "Coordinator",
+        link: "https://www.linkedin.com/in/ryan-bahadori-95a9383ab/",
+      },
+      {
         name: "Jason How",
         role: "Volunteer Coord.",
-        link: "#",
+        link: "https://www.linkedin.com/in/jason-how-7400983b8/",
       },
       {
         name: "Apply Now",
