@@ -89,11 +89,6 @@ const SUB_TEAMS: Team[] = [
         role: "Outreach",
         link: "#",
       },
-      {
-        name: "Apply Now",
-        role: "Outreach",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
-      },
     ],
   },
   {
@@ -105,16 +100,6 @@ const SUB_TEAMS: Team[] = [
         role: "Lead",
         link: "https://neilbharwani.dev",
       },
-      {
-        name: "Apply Now",
-        role: "Designer",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
-      },
-      {
-        name: "Apply Now",
-        role: "Designer",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
-      },
     ],
   },
   {
@@ -125,26 +110,6 @@ const SUB_TEAMS: Team[] = [
         name: "Gia Vimal",
         role: "Lead",
         link: "https://www.linkedin.com/in/giavimal/",
-      },
-      {
-        name: "Apply Now",
-        role: "Social Media",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
-      },
-      {
-        name: "Apply Now",
-        role: "Content",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
-      },
-      {
-        name: "Apply Now",
-        role: "Social Media",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
-      },
-      {
-        name: "Apply Now",
-        role: "Outreach",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
       },
     ],
   },
@@ -177,11 +142,6 @@ const SUB_TEAMS: Team[] = [
         name: "Jason How",
         role: "Volunteer Coord.",
         link: "https://www.linkedin.com/in/jason-how-7400983b8/",
-      },
-      {
-        name: "Apply Now",
-        role: "AV & Tech",
-        link: "https://forms.gle/J6DzSdhLEGn8G1up8",
       },
     ],
   },
