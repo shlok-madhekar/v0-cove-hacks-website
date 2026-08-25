@@ -26,6 +26,11 @@ const EXEC_TEAM: Team = {
   description: "The core leadership team steering Cove Hacks.",
   members: [
     {
+      name: "Om Anand Khaunte",
+      role: "Head of Tech Operations",
+      link: "https://www.linkedin.com/in/om-anand-khaunte",
+    },
+    {
       name: "Neil Bharwani",
       role: "Head of Design",
       link: "https://neilbharwani.dev",
@@ -92,23 +97,18 @@ const SUB_TEAMS: Team[] = [
     ],
   },
   {
-    name: "Design",
-    description: "Brand, visual identity, and everything you see on screen.",
+    name: "Design & Marketing",
+    description:
+      "Brand, visual identity, and getting the word out.",
     members: [
       {
         name: "Neil Bharwani",
-        role: "Lead",
+        role: "Design Lead",
         link: "https://neilbharwani.dev",
       },
-    ],
-  },
-  {
-    name: "Marketing",
-    description: "Getting the word out and making sure people show up.",
-    members: [
       {
         name: "Gia Vimal",
-        role: "Lead",
+        role: "Marketing Lead",
         link: "https://www.linkedin.com/in/giavimal/",
       },
     ],
@@ -310,43 +310,22 @@ export function TeamPage() {
             </div>
           </div>
 
-          {/* Row 2 — give Logistics more room */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[3fr_4fr_6fr_2fr] gap-4">
-            {/* Design — cream */}
-            <div className="bg-[#FAFAF7] rounded-2xl p-6 sm:p-7 flex flex-col">
-              <div className="mb-5">
-                <h3 className="font-sans text-base font-bold text-[#1a1a1a] tracking-tight">
-                  {SUB_TEAMS[1].name}
-                </h3>
-                <p className="font-mono text-[10px] text-[#1a1a1a]/35 mt-1 leading-relaxed">
-                  {SUB_TEAMS[1].description}
-                </p>
-              </div>
-              <div className="flex flex-col border-t border-[#1a1a1a]/[0.06] pt-3 mt-auto">
-                {SUB_TEAMS[1].members.map((member, i) => (
-                  <MemberRow
-                    key={`${SUB_TEAMS[1].name}-${i}`}
-                    member={member}
-                    variant="light"
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Marketing — dark */}
+          {/* Row 2 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[4fr_7fr_2fr] gap-4">
+            {/* Design & Marketing — dark */}
             <div className="bg-[#222] rounded-2xl p-6 sm:p-7 flex flex-col">
               <div className="mb-4">
                 <h3 className="font-sans text-base font-bold text-white tracking-tight">
-                  {SUB_TEAMS[2].name}
+                  {SUB_TEAMS[1].name}
                 </h3>
                 <p className="font-mono text-[10px] text-white/35 mt-1 leading-relaxed">
-                  {SUB_TEAMS[2].description}
+                  {SUB_TEAMS[1].description}
                 </p>
               </div>
               <div className="flex flex-col border-t border-white/[0.08] pt-3 mt-auto">
-                {SUB_TEAMS[2].members.map((member, i) => (
+                {SUB_TEAMS[1].members.map((member, i) => (
                   <MemberRow
-                    key={`${SUB_TEAMS[2].name}-${i}`}
+                    key={`${SUB_TEAMS[1].name}-${i}`}
                     member={member}
                     variant="dark"
                   />
@@ -358,16 +337,16 @@ export function TeamPage() {
             <div className="bg-[#F0EDE6] rounded-2xl p-6 sm:p-7 flex flex-col">
               <div className="mb-5">
                 <h3 className="font-sans text-base font-bold text-[#1a1a1a] tracking-tight">
-                  {SUB_TEAMS[3].name}
+                  {SUB_TEAMS[2].name}
                 </h3>
                 <p className="font-mono text-[10px] text-[#1a1a1a]/35 mt-1 leading-relaxed">
-                  {SUB_TEAMS[3].description}
+                  {SUB_TEAMS[2].description}
                 </p>
               </div>
               <div className="flex flex-col border-t border-[#1a1a1a]/[0.06] pt-3 mt-auto">
-                {SUB_TEAMS[3].members.map((member, i) => (
+                {SUB_TEAMS[2].members.map((member, i) => (
                   <MemberRow
-                    key={`${SUB_TEAMS[3].name}-${i}`}
+                    key={`${SUB_TEAMS[2].name}-${i}`}
                     member={member}
                     variant="light"
                   />
@@ -379,16 +358,16 @@ export function TeamPage() {
             <div className="bg-[#6B9BD2]/10 rounded-2xl p-6 sm:p-7 flex flex-col border border-[#6B9BD2]/10">
               <div className="mb-5">
                 <h3 className="font-sans text-base font-bold text-white tracking-tight">
-                  {SUB_TEAMS[4].name}
+                  {SUB_TEAMS[3].name}
                 </h3>
                 <p className="font-mono text-[10px] text-white/35 mt-1 leading-relaxed">
-                  {SUB_TEAMS[4].description}
+                  {SUB_TEAMS[3].description}
                 </p>
               </div>
               <div className="flex flex-col border-t border-white/[0.08] pt-3 mt-auto">
-                {SUB_TEAMS[4].members.map((member, i) => (
+                {SUB_TEAMS[3].members.map((member, i) => (
                   <MemberRow
-                    key={`${SUB_TEAMS[4].name}-${i}`}
+                    key={`${SUB_TEAMS[3].name}-${i}`}
                     member={member}
                     variant="dark"
                   />
